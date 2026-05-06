@@ -607,14 +607,15 @@ section { padding: 100px 0; }
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  padding: 6px;
+  padding: 4px;
+  overflow: hidden;
 }
 
 .edu-logo-img {
-  width: 100%;
-  height: 100%;
+  width: 62px;
+  height: 62px;
   object-fit: contain;
-  border-radius: 8px;
+  display: block;
 }
 
 .edu-details h3 {

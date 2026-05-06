@@ -2,14 +2,14 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --navy:      #0a192f;
-  --navy-mid:  #112240;
-  --slate:     #8892b0;
-  --light-slate: #a8b2d8;
-  --lightest-slate: #ccd6f6;
-  --white:     #e6f1ff;
-  --accent:    #64ffda;
-  --accent-dim: rgba(100, 255, 218, 0.1);
+  --navy:      #100e09;
+  --navy-mid:  #1c1710;
+  --slate:     #9e8e76;
+  --light-slate: #c4ae94;
+  --lightest-slate: #e8d5b8;
+  --white:     #f5ede0;
+  --accent:    #e07a2f;
+  --accent-dim: rgba(224, 122, 47, 0.1);
   --font-sans: 'Inter', -apple-system, sans-serif;
   --font-serif: 'Playfair Display', serif;
   --nav-h: 70px;
@@ -57,7 +57,7 @@ section { padding: 100px 0; }
   width: 200px;
   height: 1px;
   background: var(--navy-mid);
-  border-top: 1px solid #233554;
+  border-top: 1px solid #2e2418;
 }
 
 /* ── Navbar ── */
@@ -294,7 +294,7 @@ section { padding: 100px 0; }
 
 .stat-card {
   background: var(--navy);
-  border: 1px solid #233554;
+  border: 1px solid #2e2418;
   border-radius: 10px;
   padding: 20px 16px;
   display: flex;
@@ -362,7 +362,7 @@ section { padding: 100px 0; }
 
 .timeline-content {
   background: var(--navy-mid);
-  border: 1px solid #233554;
+  border: 1px solid #2e2418;
   border-radius: 12px;
   padding: 28px 32px;
   transition: var(--transition);
@@ -407,7 +407,7 @@ section { padding: 100px 0; }
   color: var(--slate);
   margin-top: 10px;
   padding-top: 10px;
-  border-top: 1px solid #233554;
+  border-top: 1px solid #2e2418;
 }
 
 .job-date {
@@ -470,7 +470,7 @@ section { padding: 100px 0; }
 
 .skill-category {
   background: var(--navy);
-  border: 1px solid #233554;
+  border: 1px solid #2e2418;
   border-radius: 12px;
   padding: 28px;
   transition: var(--transition);
@@ -504,7 +504,7 @@ section { padding: 100px 0; }
 
 .bar {
   height: 4px;
-  background: #233554;
+  background: #2e2418;
   border-radius: 2px;
   overflow: hidden;
 }
@@ -586,7 +586,7 @@ section { padding: 100px 0; }
   align-items: center;
   gap: 32px;
   background: var(--navy-mid);
-  border: 1px solid #233554;
+  border: 1px solid #2e2418;
   border-radius: 12px;
   padding: 36px 40px;
   max-width: 620px;
@@ -600,6 +600,7 @@ section { padding: 100px 0; }
 
 .edu-logo {
   width: 70px;
+  min-width: 70px;
   height: 70px;
   border-radius: 14px;
   background: #fff;
@@ -607,15 +608,18 @@ section { padding: 100px 0; }
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  padding: 4px;
+  padding: 5px;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .edu-logo-img {
-  width: 62px;
-  height: 62px;
-  object-fit: contain;
   display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 60px;
+  max-height: 60px;
+  object-fit: contain;
 }
 
 .edu-details h3 {
@@ -659,7 +663,7 @@ section { padding: 100px 0; }
 
 .testimonial-card {
   background: var(--navy);
-  border: 1px solid #233554;
+  border: 1px solid #2e2418;
   border-radius: 12px;
   padding: 32px;
   position: relative;
@@ -733,7 +737,7 @@ section { padding: 100px 0; }
   font-size: 0.95rem;
   color: var(--light-slate);
   background: var(--navy-mid);
-  border: 1px solid #233554;
+  border: 1px solid #2e2418;
   border-radius: 8px;
   padding: 14px 28px;
   width: 100%;
@@ -760,7 +764,7 @@ footer {
   padding: 24px;
   font-size: 0.82rem;
   color: var(--slate);
-  border-top: 1px solid #233554;
+  border-top: 1px solid #2e2418;
 }
 
 footer a { color: var(--accent); }

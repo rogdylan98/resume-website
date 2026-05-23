@@ -1,67 +1,57 @@
-// Navbar scroll effect
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 20);
-});
+// Nav: add solid class on scroll
+const nav = document.getElementById('site-nav');
+const handleNavScroll = () => nav.classList.toggle('solid', window.scrollY > 10);
+window.addEventListener('scroll', handleNavScroll, { passive: true });
+handleNavScroll();
 
-// Mobile hamburger menu
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
-  hamburger.innerHTML = navLinks.classList.contains('open') ? '&times;' : '&#9776;';
-});
+// Mobile menu
+const toggle = document.querySelector('.nav-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileClose = document.querySelector('.mobile-close');
 
-navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    hamburger.innerHTML = '&#9776;';
-  });
-});
+const openMenu = () => {
+  mobileMenu.classList.add('open');
+  mobileMenu.setAttribute('aria-hidden', 'false');
+  toggle.setAttribute('aria-expanded', 'true');
+  document.body.style.overflow = 'hidden';
+};
 
-// Scroll-triggered fade-in
-const fadeEls = document.querySelectorAll(
-  '.timeline-item, .skill-category, .stat-card, .testimonial-card, .edu-card, .about-text, .about-stats'
-);
+const closeMenu = () => {
+  mobileMenu.classList.remove('open');
+  mobileMenu.setAttribute('aria-hidden', 'true');
+  toggle.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+};
 
-fadeEls.forEach(el => el.classList.add('fade-in-up'));
+toggle.addEventListener('click', openMenu);
+mobileClose.addEventListener('click', closeMenu);
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
 
-const observer = new IntersectionObserver((entries) => {
+// Scroll reveal
+const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.12 });
+}, { threshold: 0.08 });
 
-fadeEls.forEach(el => observer.observe(el));
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-// Animate skill bars when visible
-const barObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.querySelectorAll('.bar-fill').forEach(bar => {
-        bar.style.width = bar.dataset.width + '%';
-      });
-      barObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.3 });
-
-document.querySelectorAll('.skill-category').forEach(el => barObserver.observe(el));
-
-// Active nav link highlight on scroll
+// Active nav link highlight
 const sections = document.querySelectorAll('section[id]');
-const navAnchors = document.querySelectorAll('.nav-links a');
+const navLinks = document.querySelectorAll('.nav-link');
 
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(section => {
-    if (window.scrollY >= section.offsetTop - 100) {
-      current = section.getAttribute('id');
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(link => {
+        const active = link.getAttribute('href') === `#${entry.target.id}`;
+        link.style.color = active ? 'var(--white)' : '';
+      });
     }
   });
-  navAnchors.forEach(a => {
-    a.style.color = a.getAttribute('href') === `#${current}` ? 'var(--accent)' : '';
-  });
-});
+}, { threshold: 0.4 });
+
+sections.forEach(s => sectionObserver.observe(s));

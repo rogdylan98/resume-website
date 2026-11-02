@@ -70,3 +70,8 @@ Skill → evidence mapping (for cross-highlighting): e.g. "Apache Kafka" → Nis
 
 ## Education
 The University of Texas at Austin — BA Economics, Minor in Business Foundations — 2017 – 2021 (logo: assets/ut-logo.png)
+
+## Narrative (approved by Dylan, Nov 2026)
+Hero pitch: "Enterprises don't stall on technology. They stall on alignment." Kicker: "I get the room moving."
+The work = stories (retirement provider automation; logistics "twenty rooms, one picture"; Boeing one source of truth; developer origins) with resume metrics as proof lines.
+About: produces music and DJs (no alias, no links); organizes events with friends to play music and dance in Sydney, Austin, San Francisco, New York City; mentors newer team members on accounts.

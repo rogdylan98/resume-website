@@ -8,8 +8,8 @@ import pathlib, re, sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC = ROOT / "src"
 
-PARTIALS = ["nav", "hero", "impact", "experience", "capabilities", "contact"]
-CSS = ["tokens", "base", "nav", "hero", "impact", "experience", "capabilities", "contact", "palette", "print"]
+PARTIALS = ["nav", "hero", "impact", "experience", "about", "capabilities", "contact"]
+CSS = ["tokens", "base", "nav", "hero", "impact", "experience", "about", "capabilities", "contact", "palette", "print"]
 JS = ["core", "nav", "hero", "impact", "experience", "capabilities", "contact", "palette"]
 
 

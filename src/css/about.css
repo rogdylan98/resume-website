@@ -1,0 +1,16 @@
+/* About — music, DJing, human connection */
+.about__grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); row-gap: var(--s-7); }
+.about__aside { grid-column: 1 / span 3; align-self: start; display: grid; gap: var(--s-3); }
+.about__cities { display: grid; border-top: 1px solid var(--rule-strong); }
+.about__cities li { font: 400 var(--t-h3)/1.2 var(--f-display); color: var(--ink); padding: var(--s-3) 0; border-bottom: 1px solid var(--rule); }
+.about__aside-label { margin-top: var(--s-5); }
+.about__aside-text { font-size: var(--t-small); color: var(--ink-2); }
+.about__body { grid-column: 4 / span 8; display: grid; gap: var(--s-5); max-width: 64ch; }
+.about__body p { font-size: var(--t-lead); line-height: 1.55; color: var(--ink-2); }
+.about__body .about__lead { font: 400 var(--t-h2)/1.05 var(--f-display); letter-spacing: -.015em; color: var(--ink); text-wrap: balance; }
+@media (max-width: 900px) {
+  .about__aside, .about__body { grid-column: 1 / -1; }
+  .about__aside { order: 2; }
+  .about__body p { font-size: var(--t-body); }
+}
+@media print { .about { display: none; } }

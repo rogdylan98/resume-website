@@ -1,0 +1,209 @@
+/* ==========================================================================
+   02 — Experience
+   Editorial role list on a 12-col grid with a scroll-filled timeline rail.
+   The timeline node lives in the sticky meta column, so it travels down the
+   rail while a role is read and parks at the role's end.
+   ========================================================================== */
+.xp {
+  --xp-rail-x: 5px;            /* rail centre line, from the wrap's left edge */
+  --xp-indent: 32px;           /* meta text indent past the rail */
+  --xp-node: 11px;
+  --xp-node-x: calc(var(--xp-rail-x) - var(--xp-node) / 2);  /* node left, relative to .xp__meta */
+  --xp-pad: var(--s-7);        /* role vertical padding */
+  --xp-date-lh: 24px;          /* date line-height (node is centred on it) */
+}
+
+/* ---- List + roles -------------------------------------------------------- */
+.xp__list { position: relative; }
+
+.xp__role {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  padding-block: var(--xp-pad);
+}
+/* Hairline between roles, flush with the .wrap edge like the section rule */
+.xp__role + .xp__role::before {
+  content: ""; position: absolute; top: 0; right: 0; left: 0;
+  border-top: 1px solid var(--rule);
+}
+.xp__role:first-child { padding-top: 0; }
+
+/* ---- Timeline rail ------------------------------------------------------- */
+.xp__rail {
+  position: absolute; left: calc(var(--xp-rail-x) - .5px); width: 1px;
+  top: 0; bottom: 0; background: var(--rule);
+}
+.xp__role:first-child .xp__rail {
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 var(--s-7));
+          mask-image: linear-gradient(to bottom, transparent, #000 var(--s-7));
+}
+.xp__role:last-child .xp__rail {
+  -webkit-mask-image: linear-gradient(to bottom, #000 40%, transparent);
+          mask-image: linear-gradient(to bottom, #000 40%, transparent);
+}
+.xp__rail-fill {
+  position: absolute; inset: 0; background: var(--ink-3);
+  transform-origin: 50% 0;
+  transition: background-color var(--dur-2) var(--ease-out);
+}
+.xp__node {
+  position: absolute; z-index: 1;
+  left: var(--xp-node-x);
+  top: calc(var(--xp-date-lh) / 2 - var(--xp-node) / 2);
+  width: var(--xp-node); height: var(--xp-node); border-radius: 50%;
+  background: var(--ink); border: 1.5px solid var(--ink);
+  box-shadow: 0 0 0 4px var(--paper);
+  transition: background-color var(--dur-2) var(--ease-out), border-color var(--dur-2) var(--ease-out),
+              box-shadow var(--dur-2) var(--ease-out), transform var(--dur-2) var(--ease-out);
+}
+.xp__node--current { background: var(--accent); border-color: var(--accent); box-shadow: 0 0 0 4px var(--paper), 0 0 0 8px var(--accent-soft); }
+
+/* Scroll-driven fill: base state is final (capture mode & fallback); animate from empty. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    html:not(.capture) .xp__rail-fill {
+      animation: xp-fill linear both;
+      animation-timeline: view(block 0% 42%);
+      animation-range: entry-crossing 0% entry-crossing 100%;
+    }
+    html:not(.capture) .xp__node {
+      animation: xp-node linear both;
+      animation-timeline: view(block 0% 42%);
+      animation-range: entry-crossing 0% entry-crossing 100%;
+    }
+  }
+}
+@keyframes xp-fill { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+@keyframes xp-node {
+  0%, 99% { background-color: var(--paper); border-color: var(--rule-strong); transform: scale(.82); }
+  100% { transform: scale(1); }
+}
+/* IntersectionObserver fallback (set by experience.js where scroll timelines are unsupported) */
+.xp--io .xp__role:not([data-reached]) .xp__node { background-color: var(--paper); border-color: var(--rule-strong); transform: scale(.82); }
+.xp--io .xp__role:not([data-reached]) .xp__rail-fill { transform: scaleY(0); }
+.xp--io .xp__rail-fill { transition: transform 900ms var(--ease-out), background-color var(--dur-2) var(--ease-out); }
+
+/* ---- Meta column (baseline-aligned to the company name) ------------------ */
+.xp__meta {
+  grid-column: 1 / span 3;
+  padding-left: var(--xp-indent);
+  align-self: baseline;
+  position: sticky; top: calc(var(--nav-h) + var(--s-6));
+}
+.xp__dates {
+  font: 500 var(--t-small)/var(--xp-date-lh) var(--f-mono);
+  font-variant-numeric: tabular-nums; letter-spacing: -.01em;
+  color: var(--ink); white-space: nowrap;
+  transition: color var(--dur-2) var(--ease-out);
+}
+.xp__dash { color: var(--ink-3); }
+.xp__present { color: var(--accent); }
+.xp__where {
+  margin-top: var(--s-4); padding-top: var(--s-4);
+  border-top: 1px solid var(--rule);
+  max-width: 200px;
+  font: 400 var(--t-small)/1.4 var(--f-sans); color: var(--ink-2);
+}
+.xp__type {
+  margin-top: var(--s-1);
+  font: 400 var(--t-micro)/1.5 var(--f-mono); letter-spacing: .08em; text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+/* ---- Body column --------------------------------------------------------- */
+.xp__body { grid-column: 4 / -1; min-width: 0; align-self: baseline; container-type: inline-size; container-name: xp-body; }
+.xp__header { margin-bottom: var(--s-5); }
+.xp__company {
+  font: 400 clamp(1.9rem, 1.5rem + 1.2vw, 2.5rem)/1 var(--f-display);
+  letter-spacing: -.012em; color: var(--ink);
+}
+.xp__title {
+  margin-top: var(--s-2);
+  font: 500 var(--t-body)/1.35 var(--f-sans); letter-spacing: -.008em; color: var(--ink);
+}
+.xp__qual { font-weight: 400; color: var(--ink-3); }
+
+/* Lead role: one size step up, more air */
+.xp__role--lead .xp__company { font-size: clamp(2.4rem, 1.7rem + 2vw, 3.25rem); letter-spacing: -.018em; }
+.xp__role--lead .xp__header { margin-bottom: var(--s-6); }
+.xp__role--compact { --xp-pad: var(--s-6); }
+.xp__role--compact .xp__header { margin-bottom: var(--s-4); }
+
+/* Client sub-blocks */
+.xp__clients { display: grid; gap: var(--s-6); }
+@container xp-body (min-width: 720px) {
+  .xp__clients { grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; column-gap: var(--s-7); }
+  @supports (grid-template-rows: subgrid) {
+    .xp__client { display: grid; grid-row: span 2; grid-template-rows: subgrid; row-gap: 0; }
+  }
+}
+.xp__client { border-top: 1px solid var(--rule-strong); padding-top: var(--s-3); }
+.xp__client-label {
+  font: 500 var(--t-micro)/1.5 var(--f-mono); letter-spacing: .1em; text-transform: uppercase;
+  color: var(--ink-3); margin-bottom: var(--s-4); text-wrap: balance;
+}
+.xp__client-key { color: var(--accent); }
+
+/* Bullets */
+.xp__bullets { display: grid; gap: var(--s-3); max-width: 64ch; align-content: start; }
+.xp__role--lead .xp__bullets { gap: var(--s-4); }
+.xp__bullets li {
+  position: relative; padding-left: 22px;
+  font-size: var(--t-body); line-height: 1.6; color: var(--ink-2);
+}
+.xp__bullets li::before {
+  content: ""; position: absolute; left: 0; top: .8em; width: 10px; height: 1px;
+  background: var(--ink-3);
+  transition: background-color var(--dur-2) var(--ease-out), width var(--dur-2) var(--ease-out);
+}
+.xp__num {
+  font-variant-numeric: tabular-nums lining-nums;
+  font-weight: 600; color: var(--ink); letter-spacing: -.005em;
+}
+
+/* ---- Evidence highlight (driven by Site.highlightEvidence) --------------- */
+.xp__meta, .xp__body { transition: opacity var(--dur-2) var(--ease-out); }
+html[data-evidence] .xp__role:not(.is-evidence) .xp__meta,
+html[data-evidence] .xp__role:not(.is-evidence) .xp__body { opacity: .32; }
+html[data-evidence] .xp__role:not(.is-evidence) .xp__node { background-color: var(--paper); border-color: var(--rule-strong); box-shadow: 0 0 0 4px var(--paper); }
+
+.xp__role.is-evidence .xp__node {
+  background: var(--accent); border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--paper), 0 0 0 8px var(--accent-soft);
+  transform: scale(1.12);
+}
+.xp__role.is-evidence .xp__rail-fill { background: var(--accent); left: -.5px; right: -.5px; }
+.xp__role.is-evidence .xp__dates { color: var(--accent); }
+.xp__role.is-evidence .xp__bullets li::before { background: var(--accent); width: 14px; }
+.xp__role.is-evidence .xp__company {
+  text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .18em;
+  text-decoration-color: var(--accent);
+}
+
+/* ---- Responsive ---------------------------------------------------------- */
+@media (max-width: 899px) {
+  .xp { --xp-indent: 28px; --xp-pad: var(--s-6); --xp-node-x: calc(var(--xp-rail-x) - var(--xp-indent) - var(--xp-node) / 2); }
+  .xp__role { display: block; padding-left: var(--xp-indent); }
+  .xp__role--compact { --xp-pad: var(--s-6); }
+  .xp__role + .xp__role::before { left: 0; }
+  .xp__meta {
+    position: relative; top: auto; padding-left: 0; margin-bottom: var(--s-3);
+    display: flex; flex-wrap: wrap; align-items: baseline; column-gap: var(--s-3); row-gap: 2px;
+  }
+  .xp__where { margin-top: 0; padding-top: 0; border-top: 0; max-width: none; }
+  .xp__where::before { content: "·"; margin-right: var(--s-3); color: var(--ink-3); }
+  .xp__type { margin-top: 0; }
+}
+@media (max-width: 480px) {
+  .xp__meta { flex-direction: column; align-items: flex-start; }
+  .xp__where::before { content: none; }
+  .xp__where { margin-top: var(--s-1); }
+  .xp__bullets li { font-size: var(--t-small); }
+}
+
+@media print {
+  .xp__rail, .xp__node { display: none; }
+  .xp__meta { position: static; }
+}

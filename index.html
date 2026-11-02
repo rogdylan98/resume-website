@@ -1,267 +1,698 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="no-js">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dylan Silva — Product Manager</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👋</text></svg>" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Dylan Silva — AI Strategy &amp; Enterprise Automation</title>
+<meta name="description" content="Dylan Silva, Technology Architecture Consultant at Accenture. I turn complex enterprise automation into shipped, funded releases, with AI-driven workflow design built into how I deliver." />
+<meta name="author" content="Dylan Silva" />
+<link rel="canonical" href="https://dylansilva.me/" />
+<meta name="theme-color" content="#F5F3EE" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#0B0E13" media="(prefers-color-scheme: dark)" />
+<meta property="og:type" content="profile" />
+<meta property="og:title" content="Dylan Silva — AI Strategy & Enterprise Automation" />
+<meta property="og:description" content="Technology Architecture Consultant at Accenture. Enterprise automation, shipped and funded — with AI-driven workflow design built in." />
+<meta property="og:url" content="https://dylansilva.me/" />
+<meta property="og:image" content="https://dylansilva.me/assets/profile.jpg" />
+<meta name="twitter:card" content="summary" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230D1117'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-style='italic' font-size='38' fill='%23F5F3EE'%3Eds%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:opsz,wght@14..32,300..700&family=JetBrains+Mono:wght@400;500&display=swap" />
+<link rel="stylesheet" href="style.css" />
+<script>
+  /* Theme before paint: ?theme= (tooling) > saved choice > system. */
+  (function () {
+    var d = document.documentElement, t = null;
+    try { t = new URLSearchParams(location.search).get('theme') || localStorage.getItem('theme'); } catch (e) {}
+    if (t === 'light' || t === 'dark') d.setAttribute('data-theme', t);
+  })();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Dylan Silva",
+  "url": "https://dylansilva.me/",
+  "image": "https://dylansilva.me/assets/profile.jpg",
+  "jobTitle": "Technology Architecture Consultant",
+  "worksFor": { "@type": "Organization", "name": "Accenture" },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "The University of Texas at Austin" },
+  "address": { "@type": "PostalAddress", "addressLocality": "Austin", "addressRegion": "TX", "addressCountry": "US" },
+  "email": "mailto:rdylan.silva@gmail.com",
+  "sameAs": ["https://www.linkedin.com/in/rdylan-silva"],
+  "knowsAbout": ["AI strategy", "AI-driven workflow design", "Process automation", "Solution architecture", "Executive advisory", "Apache Kafka", "Python", "SQL"]
+}
+</script>
+
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="nav" data-nav>
+  <div class="nav__bar wrap">
+    <a class="nav__brand" href="#hero" aria-label="Dylan Silva, back to top">
+      <span class="nav__mark" aria-hidden="true">ds</span>
+      <span class="nav__wordmark">Dylan Silva</span>
+    </a>
 
-  <!-- NAV -->
-  <header id="site-nav">
-    <div class="nav-inner">
-      <a href="#" class="nav-brand">Dylan Silva</a>
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="#about" class="nav-link">About</a>
-        <a href="#experience" class="nav-link">Experience</a>
-        <a href="#skills" class="nav-link">Skills</a>
-        <a href="#contact" class="nav-link">Contact</a>
-      </nav>
-      <a href="assets/Dylan_Silva_Resume.pdf" download class="nav-resume">Resume ↓</a>
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
+    <nav class="nav__links" aria-label="Primary">
+      <ul class="nav__list">
+        <li><a class="nav__link" href="#impact" data-nav-link="impact"><span class="nav__idx" aria-hidden="true">02</span>Impact</a></li>
+        <li><a class="nav__link" href="#experience" data-nav-link="experience"><span class="nav__idx" aria-hidden="true">03</span>Experience</a></li>
+        <li><a class="nav__link" href="#capabilities" data-nav-link="capabilities"><span class="nav__idx" aria-hidden="true">04</span>Capabilities</a></li>
+        <li><a class="nav__link" href="#contact" data-nav-link="contact"><span class="nav__idx" aria-hidden="true">05</span>Contact</a></li>
+      </ul>
+      <span class="nav__indicator" aria-hidden="true"></span>
+    </nav>
+
+    <div class="nav__actions">
+      <button class="nav__cmd" type="button" data-nav-palette aria-label="Open command palette" aria-keyshortcuts="Meta+K Control+K">
+        <span class="nav__cmd-label">Search</span>
+        <kbd class="nav__kbd" data-nav-kbd>⌘K</kbd>
+      </button>
+
+      <button class="nav__icon-btn nav__theme" type="button" data-nav-theme aria-pressed="false" aria-label="Dark theme">
+        <svg class="nav__theme-svg" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+          <mask id="nav-moon-mask">
+            <rect x="0" y="0" width="24" height="24" fill="#fff" />
+            <circle class="nav__theme-cut" cx="20" cy="4" r="7" fill="#000" />
+          </mask>
+          <circle class="nav__theme-core" cx="12" cy="12" r="8" fill="currentColor" mask="url(#nav-moon-mask)" />
+          <g class="nav__theme-rays" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+            <line x1="12" y1="1.5" x2="12" y2="3.5" /><line x1="12" y1="20.5" x2="12" y2="22.5" />
+            <line x1="1.5" y1="12" x2="3.5" y2="12" /><line x1="20.5" y1="12" x2="22.5" y2="12" />
+            <line x1="4.6" y1="4.6" x2="6" y2="6" /><line x1="18" y1="18" x2="19.4" y2="19.4" />
+            <line x1="4.6" y1="19.4" x2="6" y2="18" /><line x1="18" y1="6" x2="19.4" y2="4.6" />
+          </g>
+        </svg>
+      </button>
+
+      <a class="nav__resume" href="assets/Dylan_Silva_Resume.pdf" download>
+        Resume
+        <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path d="M8 2.5v9M4 8l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+
+      <button class="nav__icon-btn nav__menu" type="button" data-nav-menu aria-expanded="false" aria-controls="nav-sheet" aria-label="Open menu">
+        <span class="nav__menu-lines" aria-hidden="true"><span></span><span></span></span>
       </button>
     </div>
-  </header>
+  </div>
+  <div class="nav__progress" aria-hidden="true"><span class="nav__progress-bar"></span></div>
+</header>
 
-  <!-- MOBILE MENU -->
-  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-    <button class="mobile-close" aria-label="Close menu">&#x2715;</button>
-    <nav class="mobile-links">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-      <a href="assets/Dylan_Silva_Resume.pdf" download class="mobile-resume">Download Resume</a>
+<div class="nav-sheet" id="nav-sheet" role="dialog" aria-modal="true" aria-label="Site menu" hidden data-nav-sheet>
+  <div class="nav-sheet__inner wrap">
+    <div class="nav-sheet__top">
+      <span class="nav-sheet__eyebrow">Index</span>
+      <button class="nav__icon-btn nav-sheet__close" type="button" data-nav-close aria-label="Close menu">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <nav aria-label="Mobile">
+      <ol class="nav-sheet__list">
+        <li><a class="nav-sheet__link" href="#impact" data-nav-link="impact"><span class="nav-sheet__idx">02</span>Impact</a></li>
+        <li><a class="nav-sheet__link" href="#experience" data-nav-link="experience"><span class="nav-sheet__idx">03</span>Experience</a></li>
+        <li><a class="nav-sheet__link" href="#capabilities" data-nav-link="capabilities"><span class="nav-sheet__idx">04</span>Capabilities</a></li>
+        <li><a class="nav-sheet__link" href="#contact" data-nav-link="contact"><span class="nav-sheet__idx">05</span>Contact</a></li>
+      </ol>
     </nav>
+    <div class="nav-sheet__foot">
+      <button class="nav-sheet__action" type="button" data-nav-palette><span>Command palette</span><kbd class="nav__kbd" data-nav-kbd>⌘K</kbd></button>
+      <button class="nav-sheet__action" type="button" data-nav-theme aria-pressed="false"><span>Dark theme</span><span class="nav-sheet__state" data-nav-theme-state>Off</span></button>
+      <a class="nav-sheet__action" href="assets/Dylan_Silva_Resume.pdf" download><span>Download resume</span><span class="nav-sheet__state">PDF</span></a>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+<section id="hero" class="section hero" aria-labelledby="hero-title">
+  <svg class="hero__defs" width="0" height="0" aria-hidden="true" focusable="false">
+    <!-- Light: neutral graphite → paper -->
+    <filter id="hero-duo-light" color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix" values=".30 .59 .11 0 0  .30 .59 .11 0 0  .30 .59 .11 0 0  0 0 0 1 0" />
+      <feComponentTransfer>
+        <feFuncR type="table" tableValues=".10 .26 .56 .84 .95" />
+        <feFuncG type="table" tableValues=".10 .26 .56 .835 .94" />
+        <feFuncB type="table" tableValues=".105 .26 .55 .82 .92" />
+      </feComponentTransfer>
+    </filter>
+    <!-- Dark: navy-tinted shadows → paper -->
+    <filter id="hero-duo-dark" color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix" values=".30 .59 .11 0 0  .30 .59 .11 0 0  .30 .59 .11 0 0  0 0 0 1 0" />
+      <feComponentTransfer>
+        <feFuncR type="table" tableValues=".043 .24 .62 .90 .965" />
+        <feFuncG type="table" tableValues=".055 .25 .62 .89 .953" />
+        <feFuncB type="table" tableValues=".11 .34 .66 .88 .933" />
+      </feComponentTransfer>
+    </filter>
+  </svg>
+
+  <div class="wrap">
+    <div class="hero__meta">
+      <p class="hero__meta-item">01 — Introduction</p>
+    </div>
+
+    <div class="hero__grid">
+      <h1 id="hero-title" class="hero__name">
+        <span class="hero__line"><span class="hero__line-in">Dylan</span></span>
+        <span class="hero__line hero__line--2"><span class="hero__line-in"><em>Silva</em></span></span>
+      </h1>
+
+      <figure class="hero__portrait">
+        <div class="hero__frame">
+          <img class="hero__img" src="assets/profile.jpg" width="968" height="922"
+               alt="Portrait of Dylan Silva, smiling, in a grey blazer and white open-collar shirt"
+               fetchpriority="high" decoding="async" />
+        </div>
+        <figcaption class="hero__caption">Fig. 1 — Dylan Silva</figcaption>
+      </figure>
+
+      <dl class="hero__aside">
+        <div class="hero__fact">
+          <dt>Currently</dt>
+          <dd><span class="hero__live" aria-hidden="true"></span>Technology Architecture Consultant @ Accenture · Austin, Texas</dd>
+        </div>
+        <div class="hero__fact">
+          <dt>Previously</dt>
+          <dd>Solutions Engineer @ Boeing</dd>
+        </div>
+      </dl>
+
+      <div class="hero__copy">
+        <p class="hero__position">AI Strategy &amp; <em>Enterprise Automation</em></p>
+        <p class="hero__lead">I turn complex enterprise automation into shipped, funded releases, and I build AI-driven workflow design into how I deliver.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--primary" href="#impact">View the work
+            <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn btn--ghost" href="assets/Dylan_Silva_Resume.pdf" download>Download resume
+            <svg data-dir="down" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 2.5v9M4 8l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Exhibit 0 — signature: STP realized vs projected -->
+    <figure class="hero__ex" aria-labelledby="hero-ex-title">
+      <div class="hero__ex-rail">
+        <span class="hero__ex-label">Exhibit 0</span>
+        <p id="hero-ex-title" class="hero__ex-title">79% straight-through processing (STP) uplift across 4 shipped releases · 96% projected over 5 years</p>
+        <p class="hero__ex-src">Fortune 500 retirement &amp; financial services provider</p>
+      </div>
+
+      <div class="hero__chart" role="img" aria-labelledby="hero-chart-desc">
+        <p id="hero-chart-desc" class="sr-only">Bar chart on a 0 to 100 percent scale. Realized straight-through processing uplift across 4 shipped releases: 79 percent. Projected uplift over 5 years: 96 percent, an estimate.</p>
+        <div class="hero__scale" aria-hidden="true">
+          <span style="--t:0">0</span><span style="--t:25">25</span><span style="--t:50">50</span><span style="--t:75">75</span><span style="--t:100">100%</span>
+        </div>
+        <div class="hero__row hero__row--real" style="--v:79" aria-hidden="true">
+          <div class="hero__row-head">
+            <span class="hero__row-key">Realized <span class="hero__row-sub">4 shipped releases</span></span>
+            <span class="hero__row-val" data-hero-count="79">79%</span>
+          </div>
+          <div class="hero__track"><span class="hero__bar"></span></div>
+        </div>
+        <div class="hero__row hero__row--proj" style="--v:96" aria-hidden="true">
+          <div class="hero__row-head">
+            <span class="hero__row-key">Projected <span class="hero__row-sub">5-year estimate</span></span>
+            <span class="hero__row-val" data-hero-count="96">96%</span>
+          </div>
+          <div class="hero__track"><span class="hero__bar"></span></div>
+        </div>
+      </div>
+    </figure>
+
+    <div class="hero__focus">
+      <p class="hero__focus-label">Focus</p>
+      <ul class="hero__focus-list">
+        <li>AI strategy</li>
+        <li>AI-driven workflow design</li>
+        <li>Process automation (STP)</li>
+        <li>Solution architecture</li>
+        <li>Executive advisory</li>
+        <li>Requirements and discovery</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="impact" class="section section--band impact" aria-labelledby="impact-title">
+  <div class="wrap">
+    <header class="section-head">
+      <p class="section-head__index eyebrow">01 — Impact</p>
+      <h2 id="impact-title" class="section-head__title">Automation that ships, <em>and gets funded</em></h2>
+    </header>
+
+    <!-- Exhibit 01 — Outcomes by engagement -->
+    <figure class="exhibit impact__ex reveal" aria-labelledby="impact-ex1-title">
+      <figcaption class="impact__rail">
+        <span class="exhibit__label">Exhibit 01</span>
+        <span id="impact-ex1-title" class="exhibit__title">Selected outcomes by engagement</span>
+        <span class="impact__caption">Two Fortune 500 engagements at Accenture, and data engineering at Nisum.</span>
+      </figcaption>
+      <div class="impact__body">
+        <div class="impact__groups" data-impact-metrics>
+          <div class="impact__group" role="group" aria-labelledby="impact-g1">
+            <p class="impact__ghead" id="impact-g1"><span class="impact__gfirm">Accenture</span><span class="impact__gclient">Fortune 500 retirement &amp; financial services provider</span></p>
+            <ul class="impact__metrics">
+              <li class="impact__metric impact__metric--lead">
+                <span class="impact__value"><span class="impact__num" data-count="79" data-suffix="%" data-final="79%" aria-hidden="true"><span>79%</span></span><span class="sr-only">79%</span></span>
+                <span class="impact__desc">Straight-through processing uplift from a money-movement automation</span>
+              </li>
+              <li class="impact__metric">
+                <span class="impact__value"><span class="impact__num" data-count="4" data-final="4" aria-hidden="true"><span>4</span></span><span class="sr-only">4</span></span>
+                <span class="impact__desc">Client-facing software releases directed</span>
+              </li>
+              <li class="impact__metric">
+                <span class="impact__value"><span class="impact__num" data-count="2" data-final="2" aria-hidden="true"><span>2</span></span><span class="sr-only">2</span></span>
+                <span class="impact__desc">Funding-gate approvals secured by aligning business and IT leaders</span>
+              </li>
+            </ul>
+          </div>
+          <div class="impact__group" role="group" aria-labelledby="impact-g2">
+            <p class="impact__ghead" id="impact-g2"><span class="impact__gfirm">Accenture</span><span class="impact__gclient">Fortune 500 global logistics company</span></p>
+            <ul class="impact__metrics">
+              <li class="impact__metric">
+                <span class="impact__value"><span class="impact__num" data-count="20" data-suffix="+" data-final="20+" aria-hidden="true"><span>20+</span></span><span class="sr-only">20+</span></span>
+                <span class="impact__desc">Executive discovery &amp; requirements workshops led</span>
+              </li>
+              <li class="impact__metric">
+                <span class="impact__value"><span class="impact__num" data-count="30" data-suffix="+" data-final="30+" aria-hidden="true"><span>30+</span></span><span class="sr-only">30+</span></span>
+                <span class="impact__desc">Internal &amp; external personas mapped in service blueprints and journey maps</span>
+              </li>
+              <li class="impact__metric">
+                <span class="impact__value"><span class="impact__num impact__num--word">Weekly</span></span>
+                <span class="impact__desc">C-level briefings: progress read-outs, solution demos, risk debriefs</span>
+              </li>
+            </ul>
+          </div>
+          <div class="impact__group" role="group" aria-labelledby="impact-g3">
+            <p class="impact__ghead" id="impact-g3"><span class="impact__gfirm">Nisum</span><span class="impact__gclient">Apache Kafka · Python · SQL</span></p>
+            <ul class="impact__metrics">
+              <li class="impact__metric">
+                <span class="impact__value"><span class="impact__num" data-count="40" data-suffix="%" data-final="40%" aria-hidden="true"><span>40%</span></span><span class="sr-only">40%</span></span>
+                <span class="impact__desc">Boost in real-time data availability for predictive analytics, from high-throughput ingestion pipelines</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p class="exhibit__note">Note: Clients anonymized and described by sector. STP = straight-through processing.</p>
+      </div>
+    </figure>
+
+    <!-- Exhibit 02 — Career timeline (overview; full dates live in Experience) -->
+    <figure class="exhibit impact__ex reveal" aria-labelledby="impact-ex2-title">
+      <figcaption class="impact__rail">
+        <span class="exhibit__label">Exhibit 02</span>
+        <span id="impact-ex2-title" class="exhibit__title">Career timeline, 2020 – present</span>
+        <span class="impact__caption">From client discovery and full-stack code to enterprise architecture. Select a role for detail.</span>
+      </figcaption>
+      <div class="impact__body">
+        <div class="impact-tl" data-impact-tl style="--span:84; --now:82.03">
+          <div class="impact-tl__head" aria-hidden="true">
+            <span class="impact-tl__hcell">Role</span>
+            <span class="impact-tl__axis" data-impact-axis>
+              <span class="impact-tl__tick" style="--m:0">2020</span>
+              <span class="impact-tl__tick" style="--m:12">2021</span>
+              <span class="impact-tl__tick" style="--m:24">2022</span>
+              <span class="impact-tl__tick" style="--m:36">2023</span>
+              <span class="impact-tl__tick" style="--m:48">2024</span>
+              <span class="impact-tl__tick" style="--m:60">2025</span>
+              <span class="impact-tl__tick" style="--m:72">2026</span>
+            </span>
+          </div>
+          <ol class="impact-tl__rows">
+            <li>
+              <a class="impact-tl__row" href="#xp-saight" data-id="saight" data-start="2020-03" data-end="2021-06" style="--a:2; --b:18">
+                <span class="impact-tl__org">Saight Dev</span>
+                <span class="impact-tl__role">Web Developer · Contract<span class="sr-only">, Mar 2020 to Jun 2021</span></span>
+                <span class="impact-tl__track" aria-hidden="true"><span class="impact-tl__bar"></span></span>
+              </a>
+            </li>
+            <li>
+              <a class="impact-tl__row" href="#xp-appacademy" data-id="appacademy" data-start="2021-08" data-end="2022-06" style="--a:19; --b:30">
+                <span class="impact-tl__org">App Academy</span>
+                <span class="impact-tl__role">Web Developer · Internship<span class="sr-only">, Aug 2021 to Jun 2022</span></span>
+                <span class="impact-tl__track" aria-hidden="true"><span class="impact-tl__bar"></span></span>
+              </a>
+            </li>
+            <li>
+              <a class="impact-tl__row" href="#xp-nisum" data-id="nisum" data-start="2022-07" data-end="2022-11" style="--a:30; --b:35">
+                <span class="impact-tl__org">Nisum</span>
+                <span class="impact-tl__role">Software Consultant<span class="sr-only">, Jul 2022 to Nov 2022</span></span>
+                <span class="impact-tl__track" aria-hidden="true"><span class="impact-tl__bar"></span></span>
+              </a>
+            </li>
+            <li>
+              <a class="impact-tl__row" href="#xp-boeing" data-id="boeing" data-start="2023-07" data-end="2025-01" style="--a:42; --b:61">
+                <span class="impact-tl__org">Boeing</span>
+                <span class="impact-tl__role">Solutions Engineer<span class="sr-only">, Jul 2023 to Jan 2025</span></span>
+                <span class="impact-tl__track" aria-hidden="true"><span class="impact-tl__bar"></span></span>
+              </a>
+            </li>
+            <li>
+              <a class="impact-tl__row impact-tl__row--current" href="#xp-accenture" data-id="accenture" data-start="2025-01" data-end="present" style="--a:60; --b:82.03">
+                <span class="impact-tl__org">Accenture<span class="impact-tl__cur">Current</span></span>
+                <span class="impact-tl__role">Technology Architecture Consultant<span class="sr-only">, Jan 2025 to present</span></span>
+                <span class="impact-tl__track" aria-hidden="true"><span class="impact-tl__bar"></span></span>
+              </a>
+            </li>
+          </ol>
+          <div class="impact-tl__foot" aria-hidden="true">
+            <span class="impact-tl__nowlabel">Now · <span data-impact-now>Nov 2026</span></span>
+          </div>
+        </div>
+        <p class="exhibit__note">Note: Bars run from start to end month; the current role is drawn through today. Full dates under Experience.</p>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<section id="experience" class="section xp" aria-labelledby="experience-title">
+  <div class="wrap">
+    <header class="section-head xp__head">
+      <p class="section-head__index eyebrow">03 — Experience</p>
+      <h2 id="experience-title" class="section-head__title">From developer to the <em>C-suite</em></h2>
+    </header>
+
+    <div class="xp__list">
+
+      <!-- Accenture: hero role -->
+      <article id="xp-accenture" data-xp="accenture" class="xp__role xp__role--lead reveal" aria-labelledby="xp-accenture-co">
+        <span class="xp__rail" aria-hidden="true"><span class="xp__rail-fill"></span></span>
+        <div class="xp__meta">
+          <span class="xp__node xp__node--current" aria-hidden="true"></span>
+          <p class="xp__dates"><time datetime="2025-01">Jan 2025</time><span class="xp__dash" aria-hidden="true"> – </span><span class="sr-only"> to </span><span class="xp__present">Present</span></p>
+          <p class="xp__where">Austin, Texas</p>
+          <p class="xp__type">Remote<span aria-hidden="true"> · </span><span class="sr-only">, </span>Full-time</p>
+        </div>
+        <div class="xp__body">
+          <header class="xp__header">
+            <h3 id="xp-accenture-co" class="xp__company">Accenture</h3>
+            <p class="xp__title">Technology Architecture Consultant</p>
+          </header>
+          <div class="xp__clients">
+            <section class="xp__client" aria-label="Client — Fortune 500 retirement &amp; financial services provider">
+              <p class="xp__client-label"><span class="xp__client-key">Client</span> <span aria-hidden="true">—</span> Fortune 500 retirement &amp; financial services provider</p>
+              <ul class="xp__bullets">
+                <li>Owned scope, schedule, and governance for a money-movement automation, defining future-state workflows and applying AI tools; projected <span class="xp__num">96%</span> straight-through processing (STP) uplift over 5 years.</li>
+                <li>Directed <span class="xp__num">4</span> client-facing software releases that lifted STP <span class="xp__num">79%</span>, running solution design, risk logs, and AI-driven workflow creation to accelerate key deliverables.</li>
+                <li>Secured <span class="xp__num">2</span> funding-gate approvals by advising client executives and aligning business and IT leaders.</li>
+              </ul>
+            </section>
+            <section class="xp__client" aria-label="Client — Fortune 500 global logistics company">
+              <p class="xp__client-label"><span class="xp__client-key">Client</span> <span aria-hidden="true">—</span> Fortune 500 global logistics company</p>
+              <ul class="xp__bullets">
+                <li>Led <span class="xp__num">20+</span> executive discovery and requirements workshops across multiple business organizations to architect and govern a scalable enterprise data product platform.</li>
+                <li>Converted discovery insights into service architecture blueprints and end-to-end journey maps for <span class="xp__num">30+</span> internal and external personas, defining data flow lifecycles.</li>
+                <li>Briefed C-level leadership weekly via progress read-outs, solution demos, and proactive risk debriefs.</li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </article>
+
+      <!-- Boeing -->
+      <article id="xp-boeing" data-xp="boeing" class="xp__role reveal" aria-labelledby="xp-boeing-co">
+        <span class="xp__rail" aria-hidden="true"><span class="xp__rail-fill"></span></span>
+        <div class="xp__meta">
+          <span class="xp__node" aria-hidden="true"></span>
+          <p class="xp__dates"><time datetime="2023-07">Jul 2023</time><span class="xp__dash" aria-hidden="true"> – </span><span class="sr-only"> to </span><time datetime="2025-01">Jan 2025</time></p>
+          <p class="xp__where">Oklahoma City</p>
+          <p class="xp__type">On-site<span aria-hidden="true"> · </span><span class="sr-only">, </span>Full-time</p>
+        </div>
+        <div class="xp__body">
+          <header class="xp__header">
+            <h3 id="xp-boeing-co" class="xp__company">Boeing</h3>
+            <p class="xp__title">Solutions Engineer</p>
+          </header>
+          <ul class="xp__bullets">
+            <li>Led implementation of a cloud platform unifying requirement specs, CAD models, test suites, and simulations into one source of truth for system specs, modernizing legacy processes.</li>
+            <li>Refined requirements with solution architects and client stakeholders into platform enhancement designs.</li>
+            <li>Drove delivery to production readiness, tying digital roadmaps to leadership goals via risk mitigation reports, project logs, and roadblock resolution.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Nisum -->
+      <article id="xp-nisum" data-xp="nisum" class="xp__role xp__role--compact reveal" aria-labelledby="xp-nisum-co">
+        <span class="xp__rail" aria-hidden="true"><span class="xp__rail-fill"></span></span>
+        <div class="xp__meta">
+          <span class="xp__node" aria-hidden="true"></span>
+          <p class="xp__dates"><time datetime="2022-07">Jul 2022</time><span class="xp__dash" aria-hidden="true"> – </span><span class="sr-only"> to </span><time datetime="2022-11">Nov 2022</time></p>
+          <p class="xp__where">San Jose, California</p>
+          <p class="xp__type">Full-time</p>
+        </div>
+        <div class="xp__body">
+          <header class="xp__header">
+            <h3 id="xp-nisum-co" class="xp__company">Nisum</h3>
+            <p class="xp__title">Software Consultant</p>
+          </header>
+          <ul class="xp__bullets">
+            <li>Engineered high-throughput Apache Kafka data ingestion pipelines in Python and SQL, boosting real-time data availability <span class="xp__num">40%</span> for predictive analytics.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- App Academy -->
+      <article id="xp-appacademy" data-xp="appacademy" class="xp__role xp__role--compact reveal" aria-labelledby="xp-appacademy-co">
+        <span class="xp__rail" aria-hidden="true"><span class="xp__rail-fill"></span></span>
+        <div class="xp__meta">
+          <span class="xp__node" aria-hidden="true"></span>
+          <p class="xp__dates"><time datetime="2021-08">Aug 2021</time><span class="xp__dash" aria-hidden="true"> – </span><span class="sr-only"> to </span><time datetime="2022-06">Jun 2022</time></p>
+          <p class="xp__where">Austin (Remote)</p>
+        </div>
+        <div class="xp__body">
+          <header class="xp__header">
+            <h3 id="xp-appacademy-co" class="xp__company">App Academy</h3>
+            <p class="xp__title">Web Developer <span class="xp__qual">(Internship)</span></p>
+          </header>
+          <ul class="xp__bullets">
+            <li>Developed full-stack applications, spanning solo, paired, and team-based projects, using JavaScript, Python, React, and Redux, applying professional engineering workflows including version control, code review, and iterative delivery across a distributed student team.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Saight Dev -->
+      <article id="xp-saight" data-xp="saight" class="xp__role xp__role--compact xp__role--last reveal" aria-labelledby="xp-saight-co">
+        <span class="xp__rail" aria-hidden="true"><span class="xp__rail-fill"></span></span>
+        <div class="xp__meta">
+          <span class="xp__node" aria-hidden="true"></span>
+          <p class="xp__dates"><time datetime="2020-03">Mar 2020</time><span class="xp__dash" aria-hidden="true"> – </span><span class="sr-only"> to </span><time datetime="2021-06">Jun 2021</time></p>
+          <p class="xp__where">Austin</p>
+          <p class="xp__type">On-site</p>
+        </div>
+        <div class="xp__body">
+          <header class="xp__header">
+            <h3 id="xp-saight-co" class="xp__company">Saight Dev</h3>
+            <p class="xp__title">Web Developer <span class="xp__qual">(Contract)</span></p>
+          </header>
+          <ul class="xp__bullets">
+            <li>Led client discovery and requirements gathering sessions with small business owners, translating non-technical stakeholder needs into actionable website specifications and development priorities.</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="capabilities" class="section cap" aria-labelledby="capabilities-title">
+  <div class="wrap">
+    <header class="section-head">
+      <p class="section-head__index eyebrow">03 — Capabilities</p>
+      <h2 id="capabilities-title" class="section-head__title">Where each skill was <em>earned</em></h2>
+    </header>
+    <div class="cap__matrix" data-cap-matrix>
+      <div class="cap__head">
+        <p class="cap__readout" aria-hidden="true"><span class="cap__readout-dot"></span><span class="cap__readout-text" data-cap-readout-text>Hover a capability to see where it was earned</span></p>
+        <p class="cap__legend" aria-hidden="true"><span><b>ACN</b> Accenture</span> <span><b>BOE</b> Boeing</span> <span><b>NSM</b> Nisum</span> <span><b>AAC</b> App Academy</span> <span><b>SDV</b> Saight Dev</span></p>
+        <div class="cap__cols" aria-hidden="true">
+          <span class="cap__colhead cap__colhead--skill">Capability</span>
+          <span class="cap__colhead" data-cap-col="accenture"><span class="cap__colname">Accenture</span><span class="cap__colabbr">ACN</span><span class="cap__colyear num">2025–now</span></span>
+          <span class="cap__colhead" data-cap-col="boeing"><span class="cap__colname">Boeing</span><span class="cap__colabbr">BOE</span><span class="cap__colyear num">2023–25</span></span>
+          <span class="cap__colhead" data-cap-col="nisum"><span class="cap__colname">Nisum</span><span class="cap__colabbr">NSM</span><span class="cap__colyear num">2022</span></span>
+          <span class="cap__colhead" data-cap-col="appacademy"><span class="cap__colname">App Academy</span><span class="cap__colabbr">AAC</span><span class="cap__colyear num">2021–22</span></span>
+          <span class="cap__colhead" data-cap-col="saight"><span class="cap__colname">Saight Dev</span><span class="cap__colabbr">SDV</span><span class="cap__colyear num">2020–21</span></span>
+        </div>
+      </div>
+      <div class="cap__group" role="group" aria-labelledby="cap-g-ai">
+        <h3 class="cap__gname" id="cap-g-ai"><span class="cap__gidx" aria-hidden="true">A</span><span class="cap__gcount num" aria-hidden="true">04</span><span class="cap__gtitle">AI &amp; Automation</span></h3>
+        <ul class="cap__rows">
+          <li class="cap__row"><button type="button" class="cap__skill" data-evidence="accenture">AI-driven workflow design<span class="sr-only"> — evidenced at Accenture</span></button><span class="cap__cells" aria-hidden="true"><span class="cap__cell" data-on data-cap-col="accenture"></span><span class="cap__cell" data-cap-col="boeing"></span><span class="cap__cell" data-cap-col="nisum"></span><span class="cap__cell" data-cap-col="appacademy"></span><span class="cap__cell" data-cap-col="saight"></span></span></li>
+          <li class="cap__row"><button type="button" class="cap__skill" data-evidence="accenture">AI-assisted delivery<span class="sr-only"> — evidenced at Accenture</span></button><span class="cap__cells" aria-hidden="true"><span class="cap__cell" data-on data-cap-col="accenture"></span><span class="cap__cell" data-cap-col="boeing"></span><span class="cap__cell" data-cap-col="nisum"></span><span class="cap__cell" data-cap-col="appacademy"></span><span class="cap__cell" data-cap-col="saight"></span></span></li>
+          <li class="cap__row"><button type="button" class="cap__skill" data-evidence="accenture">STP automation<span class="sr-only"> — evidenced at Accenture</span></button><span class="cap__cells" aria-hidden="true"><span class="cap__cell" data-on data-cap-col="accenture"></span><span class="cap__cell" data-cap-col="boeing"></span><span class="cap__cell" data-cap-col="nisum"></span><span class="cap__cell" data-cap-col="appacademy"></span><span class="cap__cell" data-cap-col="saight"></span></span></li>
+          <li class="cap__row"><button type="button" class="cap__skill" data-evidence="accenture boeing">Process modernization<span class="sr-only"> — evidenced at Accenture, Boeing</span></button><span class="cap__cells" aria-hidden="true"><span class="cap__cell" data-on data-cap-col="accenture"></span><span class="cap__cell" data-on data-cap-col="boeing"></span><span class="cap__cell" data-cap-col="nisum"></span><span class="cap__cell" data-cap-col="appacademy"></span><span class="cap__cell" data-cap-col="saight"></span></span></li>
+        </ul>
+      </div>
+      <div class="cap__group" role="group" aria-labelledby="cap-g-discovery">
+        <h3 class="cap__gname" id="cap-g-discovery"><span class="cap__gidx" aria-hidden="true">B</span><span class="cap__gcount num" aria-hidden="true">04</span><span class="cap__gtitle">Discovery &amp; Architecture</span></h3>
+        <ul class="cap__rows">
+          <li class="cap__row"><button type="button" class="cap__skill" data-evidence="accenture boeing saight">Requirements gathering<span class="sr-only"> — evidenced at Accenture, Boeing, Saight Dev</span></button><span class="cap__cells" aria-hidden="true"><span class="cap__cell" data-on data-cap-col="accenture"></span><span class="cap__cell" data-on data-cap-col="boeing"></span><span class="cap__cell" data-cap-col="nisum"></span><span class="cap__cell" data-cap-col="appacademy"></span><span class="cap__cell" data-on data-cap-col="saight"></span></span></li>
+          <li class="cap__row"><button type="button" class="cap__skill" data-evidence="accenture">Service blueprinting<span class="sr-only"> — evidenced at Accenture</span></button><span class="cap__cells" aria-hidden="true"><span class="cap__cell" data-on data-cap-col="accenture"></span><span class="cap__cell" data-cap-col="boeing"></span><span class="cap__cell" data-cap-col="nisum"></span><span class="cap__cell" data-cap-col="appacademy"></span><span class="cap__cell" data-cap-col="saight"></span></span></li>
+          <li class="cap__row"><button type="button" class="cap__skill" data-evidence="accenture">Journey mapping<span class="sr-only"> — evidenced at Accenture</span></button><span class="cap__cells" aria-hidden="true"><span class="cap__cell" data-on data-cap-col="accenture"></span><span class="cap__cell" data-cap-col="boeing"></span><span class="cap__cell" data-cap-col="nisum"></span><span class="cap__cell" data-cap-col="appacademy"></span><span class="cap__cell" data-cap-col="saight"></span></span></li>
+          <li class="cap__row"><button type="button" class="cap__skill" data-evidence="accenture">Data governance<span class="sr-only"> — evidenced at Accenture</span></button><span class="cap__cells" aria-hidden="true"><span class="cap__cell" data-on data-cap-col="accenture"></span><span class="cap__cell" data-cap-col="boeing"></span><span class="cap__cell" data-cap-col="nisum"></span><span class="cap__cell" data-cap-col="appacademy"></span><span class="cap__cell" data-cap-col="saight"></span></span></li>
+        </ul>
+      </div>
+      <div class="cap__group" role="group" aria-labelledby="cap-g-leadership">
+        <h3 class="cap__gname" id="cap-g-leadership"><span class="cap__gidx" aria-hidden="true">C</span><span class="cap__gcount num" aria-hidden="true">05</span><span class="cap__gtitle">Leadership</span></h3>
+        <ul class="cap__rows">
+          <li class="cap__row"><button type="button" class="cap__skill" data-evidence="accenture">Executive advisory<span class="sr-only"> — evidenced at Accenture</span></button><span class="cap__cells" aria-hidden="true"><span class="cap__cell" data-on data-cap-col="accenture"></span><span class="cap__cell" data-cap-col="boeing"></span><span class="cap__cell" data-cap-col="nisum"></span><span class="cap__cell" data-cap-col="appacademy"></span><span class="cap__cell" data-cap-col="saight"></span></span></li>
+          <li class="cap__row"><button type="button" class="cap__skill" data-evidence="boeing">Cloud program management<span class="sr-only"> — evidenced at Boeing</span></button><span class="cap__cells" aria-hidden="true"><span class="cap__cell" data-cap-col="accenture"></span><span class="cap__cell" data-on data-cap-col="boeing"></span><span class="cap__cell" data-cap-col="nisum"></span><span class="cap__cell" data-cap-col="appacademy"></span><span class="cap__cell" data-cap-col="saight"></span></span></li>
+          <li class="cap__row"><button type="button" class="cap__skill" data-evidence="accenture boeing">Risk mitigation<span class="sr-only"> — evidenced at Accenture, Boeing</span></button><span class="cap__cells" aria-hidden="true"><span class="cap__cell" data-on data-cap-col="accenture"></span><span class="cap__cell" data-on data-cap-col="boeing"></span><span class="cap__cell" data-cap-col="nisum"></span><span class="cap__cell" data-cap-col="appacademy"></span><span class="cap__cell" data-cap-col="saight"></span></span></li>
+          <li class="cap__also"><span class="cap__also-label">Also</span> <span class="cap__also-list">Change management · Agile</span></li>
+        </ul>
+      </div>
+      <div class="cap__group" role="group" aria-labelledby="cap-g-technical">
+        <h3 class="cap__gname" id="cap-g-technical"><span class="cap__gidx" aria-hidden="true">D</span><span class="cap__gcount num" aria-hidden="true">09</span><span class="cap__gtitle">Technical</span></h3>
+        <ul class="cap__rows">
+          <li class="cap__row"><button type="button" class="cap__skill" data-evidence="nisum appacademy">Python<span class="sr-only"> — evidenced at Nisum, App Academy</span></button><span class="cap__cells" aria-hidden="true"><span class="cap__cell" data-cap-col="accenture"></span><span class="cap__cell" data-cap-col="boeing"></span><span class="cap__cell" data-on data-cap-col="nisum"></span><span class="cap__cell" data-on data-cap-col="appacademy"></span><span class="cap__cell" data-cap-col="saight"></span></span></li>
+          <li class="cap__row"><button type="button" class="cap__skill" data-evidence="nisum">SQL<span class="sr-only"> — evidenced at Nisum</span></button><span class="cap__cells" aria-hidden="true"><span class="cap__cell" data-cap-col="accenture"></span><span class="cap__cell" data-cap-col="boeing"></span><span class="cap__cell" data-on data-cap-col="nisum"></span><span class="cap__cell" data-cap-col="appacademy"></span><span class="cap__cell" data-cap-col="saight"></span></span></li>
+          <li class="cap__row"><button type="button" class="cap__skill" data-evidence="nisum">Apache Kafka<span class="sr-only"> — evidenced at Nisum</span></button><span class="cap__cells" aria-hidden="true"><span class="cap__cell" data-cap-col="accenture"></span><span class="cap__cell" data-cap-col="boeing"></span><span class="cap__cell" data-on data-cap-col="nisum"></span><span class="cap__cell" data-cap-col="appacademy"></span><span class="cap__cell" data-cap-col="saight"></span></span></li>
+          <li class="cap__row"><button type="button" class="cap__skill" data-evidence="nisum">Event-driven architecture<span class="sr-only"> — evidenced at Nisum</span></button><span class="cap__cells" aria-hidden="true"><span class="cap__cell" data-cap-col="accenture"></span><span class="cap__cell" data-cap-col="boeing"></span><span class="cap__cell" data-on data-cap-col="nisum"></span><span class="cap__cell" data-cap-col="appacademy"></span><span class="cap__cell" data-cap-col="saight"></span></span></li>
+          <li class="cap__row"><button type="button" class="cap__skill" data-evidence="appacademy">React<span class="sr-only"> — evidenced at App Academy</span></button><span class="cap__cells" aria-hidden="true"><span class="cap__cell" data-cap-col="accenture"></span><span class="cap__cell" data-cap-col="boeing"></span><span class="cap__cell" data-cap-col="nisum"></span><span class="cap__cell" data-on data-cap-col="appacademy"></span><span class="cap__cell" data-cap-col="saight"></span></span></li>
+          <li class="cap__row"><button type="button" class="cap__skill" data-evidence="appacademy">Redux<span class="sr-only"> — evidenced at App Academy</span></button><span class="cap__cells" aria-hidden="true"><span class="cap__cell" data-cap-col="accenture"></span><span class="cap__cell" data-cap-col="boeing"></span><span class="cap__cell" data-cap-col="nisum"></span><span class="cap__cell" data-on data-cap-col="appacademy"></span><span class="cap__cell" data-cap-col="saight"></span></span></li>
+          <li class="cap__also"><span class="cap__also-label">Also in toolkit</span> <span class="cap__also-list">PostgreSQL · Tableau · Figma</span></li>
+        </ul>
+      </div>
+      <p class="cap__note">Note: a mark means the role&rsquo;s documented work exercised the capability. &ldquo;Also&rdquo; lines list skills from the working toolkit that aren&rsquo;t attributed to a specific role.</p>
+    </div>
+
+    <div class="cap__edu" role="group" aria-labelledby="cap-edu-title">
+      <p class="cap__edu-label eyebrow" id="cap-edu-title">Education</p>
+      <div class="cap__edu-body">
+        <span class="cap__edu-seal"><img src="assets/ut-logo.png" width="225" height="225" alt="Seal of The University of Texas at Austin" loading="lazy" decoding="async" /></span>
+        <div class="cap__edu-text">
+          <h3 class="cap__edu-school">The University of Texas at Austin</h3>
+          <p class="cap__edu-degree"><span>BA Economics</span><span class="cap__edu-sep" aria-hidden="true"> · </span><span class="cap__edu-minor">Minor in Business Foundations</span></p>
+        </div>
+        <p class="cap__edu-years num"><time datetime="2017">2017</time>&thinsp;–&thinsp;<time datetime="2021">2021</time></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section contact" aria-labelledby="contact-title">
+  <div class="wrap">
+    <div class="section-head contact__head">
+      <p class="section-head__index eyebrow">05 — Contact</p>
+      <p class="contact__clock" data-contact-clock>
+        <span class="contact__clock-place">Austin, Texas</span>
+        <span class="contact__clock-sep" aria-hidden="true">/</span>
+        <span class="contact__clock-time"><span class="sr-only">Local time </span><time data-contact-time>Central Time</time></span>
+      </p>
+    </div>
+
+    <h2 id="contact-title" class="contact__title">Let’s build what <em>ships next<span class="contact__stop">.</span></em></h2>
+
+    <div class="contact__body">
+      <div class="contact__primary">
+        <p class="contact__label" id="contact-email-label">Email</p>
+        <button class="contact__email" type="button" data-contact-copy="rdylan.silva@gmail.com"
+                aria-label="Copy email address rdylan.silva@gmail.com to clipboard">
+          <span class="contact__email-addr">rdylan.silva<wbr />@gmail.com</span>
+          <span class="contact__chip" aria-hidden="true">
+            <svg class="contact__chip-icon contact__chip-icon--copy" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="5.5" width="8" height="8" rx="1.5"/><path d="M10.5 5.5V3.75A1.25 1.25 0 0 0 9.25 2.5h-5.5A1.25 1.25 0 0 0 2.5 3.75v5.5A1.25 1.25 0 0 0 3.75 10.5H5.5"/></svg>
+            <svg class="contact__chip-icon contact__chip-icon--done" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.2 3L13 4.5"/></svg>
+            <span class="contact__chip-text" data-contact-chip>Copy</span>
+          </span>
+        </button>
+        <a class="contact__mailto" href="mailto:rdylan.silva@gmail.com">
+          Or open in your mail app
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+
+      <div class="contact__elsewhere">
+      <p class="contact__label" id="contact-links-label">Elsewhere</p>
+      <ul class="contact__links" aria-labelledby="contact-links-label">
+        <li>
+          <a class="contact__row" href="https://www.linkedin.com/in/rdylan-silva" target="_blank" rel="noopener noreferrer">
+            <span class="contact__row-key">LinkedIn</span>
+            <span class="contact__row-val">in/rdylan-silva<span class="sr-only"> (opens in a new tab)</span></span>
+            <svg class="contact__row-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11l6-6M6 5h5v5"/></svg>
+          </a>
+        </li>
+        <li>
+          <a class="contact__row" href="tel:+17138169683">
+            <span class="contact__row-key">Phone</span>
+            <span class="contact__row-val num">713-816-9683</span>
+            <svg class="contact__row-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </li>
+        <li>
+          <a class="contact__row" href="assets/Dylan_Silva_Resume.pdf" download>
+            <span class="contact__row-key">Résumé</span>
+            <span class="contact__row-val">PDF download</span>
+            <svg class="contact__row-arrow contact__row-arrow--down" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v9M4 8.5l4 4 4-4"/></svg>
+          </a>
+        </li>
+      </ul>
+      </div>
+    </div>
+
+    <!-- Print-only resume masthead (print.css moves #contact to the top of the printed page) -->
+    <div class="contact__print" aria-hidden="true">
+      <p class="contact__print-name">Dylan Silva</p>
+      <p class="contact__print-role">AI Strategy &amp; Enterprise Automation · Technology Architecture Consultant @ Accenture</p>
+      <p class="contact__print-lead">I turn complex enterprise automation into shipped, funded releases, and I build AI-driven workflow design into how I deliver.</p>
+      <p class="contact__print-line">Austin, Texas · rdylan.silva@gmail.com · 713-816-9683 · linkedin.com/in/rdylan-silva</p>
+    </div>
   </div>
 
-  <!-- HERO -->
-  <section id="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <p class="hero-eyebrow">Product Manager &nbsp;·&nbsp; Austin, Texas</p>
-        <h1 class="hero-name">Dylan<br>Silva</h1>
-        <p class="hero-value">Building high-impact digital products at the intersection of strategy, technology, and AI.</p>
-        <div class="hero-actions">
-          <a href="#experience" class="btn btn-white">View Experience</a>
-          <a href="assets/Dylan_Silva_Resume.pdf" download class="btn btn-outline">Download Resume</a>
-        </div>
-      </div>
-      <div class="hero-photo-wrap">
-        <img src="assets/profile.jpg" alt="Dylan Silva" class="hero-photo" />
-      </div>
-    </div>
-    <div class="hero-scroll">
-      <span>Scroll</span>
-      <div class="scroll-bar"></div>
-    </div>
-  </section>
+  <div class="contact__toast" role="status" aria-live="polite" aria-atomic="true" data-contact-toast></div>
+</section>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="container">
-      <div class="about-layout reveal">
-        <div class="about-left">
-          <p class="section-label">About</p>
-        </div>
-        <div class="about-right">
-          <p class="about-lead">Product and program leader with 5+ years spanning software engineering, enterprise digital transformation, and AI-augmented product delivery.</p>
-          <p class="about-body">At Accenture, currently owning solution design for high-impact financial services releases with cascading enterprise implications. Previously at Boeing, led a manufacturing Digital Thread initiative linking engineering requirements to 3D CAD across production lines. Known for leading without authority, translating complexity for executive audiences, and shipping in ambiguous, high-stakes environments.</p>
-          <div class="about-stats">
-            <div class="stat">
-              <span class="stat-num">5+</span>
-              <span class="stat-lbl">Years' Experience</span>
-            </div>
-            <div class="stat">
-              <span class="stat-num">$5M+</span>
-              <span class="stat-lbl">Programs Directed</span>
-            </div>
-            <div class="stat">
-              <span class="stat-num">35–40%</span>
-              <span class="stat-lbl">Faster Delivery via AI</span>
-            </div>
-            <div class="stat">
-              <span class="stat-num">3</span>
-              <span class="stat-lbl">Industries Served</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+</main>
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <p class="footer__item footer__item--copy">© <span data-footer-year>2026</span> Dylan Silva</p>
+    <p class="footer__item">Set in Instrument Serif, Inter &amp; JetBrains Mono</p>
+    <button class="footer__item footer__palette" type="button" data-footer-palette aria-keyshortcuts="Meta+K Control+K">
+      Press <kbd class="footer__kbd" data-footer-kbd>⌘K</kbd>
+    </button>
+    <a class="footer__item footer__top" href="#main" data-footer-top>
+      Back to top
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 13V4M4 7.5l4-4 4 4"/></svg>
+    </a>
+  </div>
+</footer>
 
-  <!-- EXPERIENCE -->
-  <section id="experience">
-    <div class="container">
-      <p class="section-label reveal">Experience</p>
-      <div class="timeline">
+<dialog class="palette" id="palette" aria-labelledby="palette-title">
+  <h2 class="sr-only" id="palette-title">Command palette</h2>
+  <div class="palette__search">
+    <svg class="palette__search-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="7" cy="7" r="4.75"/><path d="M10.5 10.5L14 14"/></svg>
+    <input class="palette__input" id="palette-input" type="text" role="combobox"
+           aria-expanded="true" aria-controls="palette-list" aria-autocomplete="list"
+           aria-describedby="palette-count"
+           autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="go"
+           placeholder="Jump to a section, role, or action…" aria-label="Search commands" />
+    <button class="palette__close" type="button" data-palette-close aria-label="Close command palette">
+      <kbd>esc</kbd>
+    </button>
+  </div>
+  <div class="palette__list" id="palette-list" role="listbox" aria-label="Commands"></div>
+  <div class="palette__empty" data-palette-empty hidden>
+    <p class="palette__empty-title">No matches for “<span data-palette-q></span>”</p>
+    <p class="palette__empty-hint">Try “boeing”, “kafka”, “theme”, or “resume”.</p>
+  </div>
+  <div class="palette__foot">
+    <p class="palette__count" id="palette-count" aria-live="polite"></p>
+    <p class="palette__hints" aria-hidden="true">
+      <span class="palette__hint"><kbd>↑</kbd><kbd>↓</kbd> Navigate</span>
+      <span class="palette__hint"><kbd>↵</kbd> Open</span>
+      <span class="palette__hint"><kbd>esc</kbd> Close</span>
+    </p>
+  </div>
+</dialog>
 
-        <div class="tl-item reveal">
-          <div class="tl-header">
-            <span class="tl-company">Accenture</span>
-            <span class="tl-date">Jan 2025 — Present</span>
-          </div>
-          <h3 class="tl-title">Technology Architecture Consultant</h3>
-          <p class="tl-role">Product Manager — Financial Services</p>
-          <ul class="tl-list">
-            <li>Directed multiple $5M+ Money Movement transformation workstreams for a top U.S. retirement provider, governing end-to-end execution and software releases across business, tech, and operations.</li>
-            <li>Own end-to-end solution design for a high-impact software release delivering OKR uplift across two program workstreams, with cascading implications throughout the recordkeeping organization of a major financial services provider.</li>
-            <li>Secured executive funding-gate approval advancing 2 major releases from design to build; managed formal approval workflows and cross-functional alignment across business, technology, and offshore build teams.</li>
-            <li>Leveraged large language model workflows to transform unstructured design meeting data into structured, actionable feature specifications, eliminating manual documentation bottlenecks and accelerating handoff to build teams by 35–40%.</li>
-            <li>Architected a global governance model and new data reporting structure, leading 15+ workshops to define user journeys, data products and their corresponding business domains, and future-state data flows for event-driven architecture.</li>
-            <li>Designed event flows leveraging deep subject-matter expertise in legacy business and tech systems to implement scalable domain-driven architecture that the enterprise can leverage for key insights and analytics.</li>
-            <li>Collaborated with design team to translate cross-functional workshop outputs into Figma wireframes and user journey deliverables, creating a shared visual language that drove executive alignment and informed key CX design decisions.</li>
-          </ul>
-        </div>
-
-        <div class="tl-item reveal">
-          <div class="tl-header">
-            <span class="tl-company">Boeing</span>
-            <span class="tl-date">Jul 2023 — Jan 2025</span>
-          </div>
-          <h3 class="tl-title">Systems Engineer</h3>
-          <ul class="tl-list">
-            <li>Spearheaded a strategic digital transformation initiative to replace legacy manufacturing processes with a unified Digital Thread, linking requirement specifications directly to 3D CAD models and downstream E2E testing suites.</li>
-            <li>Modernized the path to FAA certification by architecting digital compliance checkpoints within the design lifecycle, reducing certification risks and streamlining delivery of Proof of Compliance (PoC) artifacts.</li>
-            <li>Aligned delivery roadmaps with program priorities by managing complex dependencies across a business domain, ensuring on-time delivery and providing regular updates on risks and issues to executive leadership.</li>
-            <li>Managed cross-functional execution across engineering, supply chain, IT, and manufacturing operations; collaborated with multi-disciplinary directors to align digital roadmap with enterprise safety and production readiness goals.</li>
-          </ul>
-        </div>
-
-        <div class="tl-item reveal">
-          <div class="tl-header">
-            <span class="tl-company">Nisum Technologies</span>
-            <span class="tl-date">Jul 2022 — Nov 2022</span>
-          </div>
-          <h3 class="tl-title">Software Engineer</h3>
-          <ul class="tl-list">
-            <li>Architected high-throughput Apache Kafka data ingestion pipelines to track product inventory and delivery status, boosting real-time data availability by 40%; used SQL and Python pandas to clean, transform, and analyze pipeline data to enable predictive supply chain analytics.</li>
-            <li>Built and maintained Tableau dashboards and optimized Angular-based analytics interfaces to surface key supply chain and inventory metrics, increasing dashboard responsiveness by 25%.</li>
-          </ul>
-        </div>
-
-        <div class="tl-item reveal">
-          <div class="tl-header">
-            <span class="tl-company">App Academy</span>
-            <span class="tl-date">Aug 2021 — Jun 2022</span>
-          </div>
-          <h3 class="tl-title">Web Developer <span class="tl-type">· Internship</span></h3>
-          <ul class="tl-list">
-            <li>Built 4 full-stack applications spanning solo, paired, and team-based projects using JavaScript, Python, React, and Redux, applying professional engineering workflows including version control, code review, and iterative delivery across a distributed student team.</li>
-            <li>Architected and deployed containerized dev tool applications using Docker and PostgreSQL, designing relational data models and RESTful APIs to support core application functionality from conception through production deployment.</li>
-            <li>Collaborated with remote engineers to scope, build, and ship shared-ownership projects under tight timelines, building cross-functional communication and delivery habits that carried directly into professional roles.</li>
-          </ul>
-        </div>
-
-        <div class="tl-item reveal">
-          <div class="tl-header">
-            <span class="tl-company">Saight Dev</span>
-            <span class="tl-date">Jun 2019 — Jun 2021</span>
-          </div>
-          <h3 class="tl-title">Web Developer <span class="tl-type">· Contract</span></h3>
-          <ul class="tl-list">
-            <li>Led client needs-gathering sessions with small business owners, translating non-technical stakeholder needs into actionable website specifications and development priorities for a 3-person dev team.</li>
-            <li>Developed and deployed small business websites using JavaScript and SQL databases, owning the full build lifecycle from requirements through launch across multiple concurrent client engagements.</li>
-            <li>Pivoted the team's focus during Covid-19 to serve small businesses accelerating their digital presence, identifying and prioritizing the highest-impact web solutions to help clients establish and grow their online storefronts.</li>
-          </ul>
-        </div>
-
-        <div class="tl-item reveal">
-          <div class="tl-header">
-            <span class="tl-company">The University of Texas at Austin</span>
-            <span class="tl-date">Sep 2017 — May 2019</span>
-          </div>
-          <h3 class="tl-title">Hospitality Specialist <span class="tl-type">· Part-time</span></h3>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills">
-    <div class="container">
-      <p class="section-label section-label--dark reveal">Skills &amp; Competencies</p>
-      <div class="skills-grid reveal">
-        <div class="skill-col">
-          <h3 class="skill-head">Strategy &amp; Leadership</h3>
-          <ul class="skill-list">
-            <li>Product Management</li>
-            <li>Program Management</li>
-            <li>Critical Path Planning</li>
-            <li>Cross-Functional Leadership</li>
-            <li>Executive Communication</li>
-            <li>Risk Management</li>
-            <li>Product Development</li>
-          </ul>
-        </div>
-        <div class="skill-col">
-          <h3 class="skill-head">Architecture &amp; Systems</h3>
-          <ul class="skill-list">
-            <li>Event-Driven Architecture</li>
-            <li>Digital Thread / MBSE</li>
-            <li>Domain-Driven Design</li>
-            <li>Manufacturing Operations</li>
-            <li>AI / LLM Workflow Integration</li>
-          </ul>
-        </div>
-        <div class="skill-col">
-          <h3 class="skill-head">Tools &amp; Technical</h3>
-          <ul class="skill-list">
-            <li>Python · SQL · JavaScript</li>
-            <li>Figma · Tableau</li>
-            <li>Apache Kafka · Angular</li>
-            <li>Docker · PostgreSQL</li>
-            <li>React · Redux</li>
-            <li>Claude Code</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="edu-block reveal">
-        <div class="edu-logo-wrap">
-          <img src="assets/ut-logo.png" alt="University of Texas at Austin" />
-        </div>
-        <div class="edu-info">
-          <p class="edu-school">The University of Texas at Austin</p>
-          <p class="edu-degree">BA Economics &nbsp;·&nbsp; Minor in Business Foundations</p>
-          <p class="edu-year">2017 — 2021</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="container">
-      <div class="contact-inner reveal">
-        <p class="section-label">Contact</p>
-        <h2 class="contact-heading">Let's Connect</h2>
-        <a href="mailto:rdylan.silva@gmail.com" class="contact-email">rdylan.silva@gmail.com</a>
-        <div class="contact-links">
-          <a href="https://linkedin.com/in/rdylan-silva" target="_blank" rel="noopener" class="contact-link">LinkedIn ↗</a>
-          <span class="contact-divider">·</span>
-          <a href="tel:7138169683" class="contact-link">713-816-9683</a>
-          <span class="contact-divider">·</span>
-          <a href="assets/Dylan_Silva_Resume.pdf" download class="contact-link">Resume ↓</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container footer-inner">
-      <span>© 2026 Dylan Silva</span>
-      <span>Built with Claude Code</span>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+<script src="js/core.js" defer></script>
+<script src="js/nav.js" defer></script>
+<script src="js/hero.js" defer></script>
+<script src="js/impact.js" defer></script>
+<script src="js/experience.js" defer></script>
+<script src="js/capabilities.js" defer></script>
+<script src="js/contact.js" defer></script>
+<script src="js/palette.js" defer></script>
 </body>
 </html>

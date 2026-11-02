@@ -1,0 +1,202 @@
+/* ==========================================================================
+   02 · Impact — exhibits: outcomes by engagement, career timeline
+   Sits on a --paper-2 band (.section--band).
+   ========================================================================== */
+.impact { padding-bottom: var(--s-8); }
+
+/* ---- Exhibit frame: rail (cols 1–3) + body (cols 4–12), matches .section-head */
+.impact__ex {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  row-gap: var(--s-5);
+  padding-top: var(--s-5);
+  border-top: 1px solid var(--rule);
+}
+.impact__ex + .impact__ex { margin-top: var(--s-8); }
+.impact__rail {
+  grid-column: 1 / span 3;
+  display: flex; flex-direction: column; gap: var(--s-3);
+  align-self: start;
+}
+.impact__body { grid-column: 4 / -1; min-width: 0; display: flex; flex-direction: column; gap: var(--s-4); }
+.impact__caption { font: 400 var(--t-small)/1.5 var(--f-sans); color: var(--ink-3); text-wrap: pretty; max-width: 34ch; }
+.impact__body > .exhibit__note { border-top: 0; padding-top: 0; }
+@media (max-width: 960px) {
+  .impact__rail, .impact__body { grid-column: 1 / -1; }
+  .impact__caption { max-width: 60ch; }
+}
+
+/* ---- Exhibit 01 · outcomes grouped by engagement ----------------------- */
+.impact__groups { container-type: inline-size; display: flex; flex-direction: column; }
+@media (min-width: 961px) { .impact__groups { margin-top: calc(-1 * var(--s-5)); } } /* group heads align with the exhibit label */
+.impact__group { overflow: hidden; }   /* clips the first tile's left hairline */
+.impact__group + .impact__group { border-top: 1px solid var(--rule); }
+.impact__ghead {
+  display: flex; flex-wrap: wrap; align-items: baseline; column-gap: var(--s-3); row-gap: 2px;
+  padding: var(--s-5) 0 0;
+  font: 500 var(--t-micro)/1.35 var(--f-mono); letter-spacing: .1em; text-transform: uppercase;
+}
+.impact__gfirm { color: var(--ink); }
+.impact__gclient { color: var(--ink-3); }
+.impact__gfirm::after { content: "/"; margin-left: var(--s-3); color: var(--rule-strong); }
+
+.impact__metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: auto 1fr;
+  margin-left: -1px;
+}
+.impact__metric {
+  display: grid;
+  grid-row: span 2;
+  grid-template-rows: subgrid;   /* value / descriptor align across a row */
+  row-gap: var(--s-3);
+  padding: var(--s-4) var(--s-5) var(--s-5);
+  border-left: 1px solid var(--rule);
+  margin-block: var(--s-4) var(--s-5);
+}
+.impact__metric:first-child { padding-left: 1px; }
+/* A lone tile (Nisum) spans the row on the same column rhythm: figure in col 1, descriptor from col 2 */
+.impact__metric:only-child {
+  grid-column: 1 / -1; grid-row: auto;
+  grid-template-rows: none; grid-template-columns: subgrid;
+  align-items: end; margin-bottom: var(--s-4);
+}
+.impact__metric:only-child .impact__desc { grid-column: 2 / -1; padding-left: var(--s-5); max-width: 44ch; padding-bottom: 2px; }
+.impact__value { display: flex; align-items: baseline; }
+.impact__num {
+  display: inline-grid;
+  font: 400 clamp(3rem, 2rem + 3vw, 4.5rem)/.9 var(--f-display);
+  letter-spacing: -.02em;
+  font-variant-numeric: tabular-nums lining-nums;
+  color: var(--ink);
+}
+.impact__num--word { font-style: italic; letter-spacing: -.01em; }
+/* Reserve the final value's width so the count-up never shifts layout */
+.impact__num > span, .impact__num::after { grid-area: 1 / 1; text-align: left; }
+.impact__num[data-final]::after { content: attr(data-final); visibility: hidden; }
+.impact__metric--lead .impact__num { color: var(--accent); }
+.impact__desc { font: 400 var(--t-small)/1.45 var(--f-sans); color: var(--ink-2); text-wrap: pretty; max-width: 30ch; }
+
+/* Narrow: each tile becomes a compact row — figure left, descriptor right */
+@container (max-width: 600px) {
+  .impact__metrics { grid-template-columns: 1fr; grid-auto-rows: auto; margin-left: 0; padding-block: var(--s-2) var(--s-3); }
+  .impact__metric {
+    grid-row: auto; grid-template-rows: none;
+    grid-template-columns: 6.75rem minmax(0, 1fr); column-gap: var(--s-4); align-items: baseline;
+    padding: var(--s-3) 0; margin: 0; border-left: 0;
+  }
+  .impact__metric + .impact__metric { border-top: 1px solid var(--rule); }
+  .impact__metric:only-child { grid-column: auto; grid-template-columns: 6.75rem minmax(0, 1fr); align-items: baseline; margin: 0; }
+  .impact__metric:only-child .impact__desc { grid-column: auto; padding: 0; }
+  .impact__metric:first-child { padding-left: 0; }
+  .impact__metric, .impact__metric:only-child { align-items: center; }
+  .impact__ghead { flex-direction: column; }
+  .impact__gfirm::after { content: none; }
+  .impact__num { font-size: 2.5rem; }
+  .impact__num--word { font-size: 2rem; }
+  .impact__desc { font-size: .875rem; }
+}
+
+/* ---- Exhibit 02 · career timeline (Gantt overview) --------------------- */
+.impact-tl { container-type: inline-size; --lw: minmax(0, 16rem); --pad: 14px; --_now: color-mix(in oklab, var(--accent) 55%, transparent); }
+.impact-tl__head, .impact-tl__row, .impact-tl__foot {
+  display: grid;
+  grid-template-columns: var(--lw) minmax(0, 1fr);
+  column-gap: var(--s-5);
+}
+.impact-tl__head {
+  grid-template-areas: "role axis";
+  padding-bottom: var(--s-2);
+  border-bottom: 1px solid var(--rule-strong);
+  font: 500 var(--t-micro)/1 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3);
+}
+.impact-tl__hcell { grid-area: role; }
+.impact-tl__axis { grid-area: axis; position: relative; height: 1em; }
+.impact-tl__tick {
+  position: absolute; left: calc(var(--m) / var(--span) * 100%);
+  padding-left: 6px; letter-spacing: .04em; font-variant-numeric: tabular-nums;
+}
+.impact-tl__tick::before { content: ""; position: absolute; left: 0; top: -2px; bottom: calc(-1 * var(--s-2) - 1px); width: 1px; background: var(--rule-strong); }
+
+.impact-tl__row {
+  grid-template-areas: "org track" "role track";
+  align-items: baseline;
+  row-gap: 2px;
+  padding-block: var(--pad);
+  border-bottom: 1px solid var(--rule);
+  transition: background-color var(--dur-1) var(--ease-out);
+}
+.impact-tl__org { grid-area: org; font: 500 var(--t-small)/1.3 var(--f-sans); color: var(--ink); display: flex; align-items: center; gap: var(--s-2); transition: color var(--dur-1) var(--ease-out); }
+.impact-tl__cur {
+  font: 500 var(--t-micro)/1 var(--f-mono); letter-spacing: .1em; text-transform: uppercase;
+  color: var(--accent); padding: 2px 5px; border: 1px solid currentColor; border-radius: 2px;
+}
+.impact-tl__role { grid-area: role; font: 400 .8125rem/1.35 var(--f-sans); color: var(--ink-3); }
+
+/* Track: year gridlines + "now" hairline drawn per row so they read as continuous columns */
+.impact-tl__track {
+  grid-area: track; align-self: stretch; position: relative;
+  margin-block: calc(-1 * var(--pad));
+  background:
+    linear-gradient(var(--_now), var(--_now)) calc(var(--now) / var(--span) * 100%) 0 / 1px 100% no-repeat,
+    repeating-linear-gradient(to right, var(--rule) 0 1px, transparent 1px calc(1200% / var(--span)));
+}
+.impact-tl__bar {
+  position: absolute; top: 50%; height: 10px; margin-top: -5px;
+  left: calc(var(--a) / var(--span) * 100%);
+  width: calc((var(--b) - var(--a)) / var(--span) * 100%);
+  background: var(--ink-3); border-radius: 2px;
+  transform-origin: 0 50%;
+  transition: transform var(--dur-3) var(--ease-out), background-color var(--dur-1) var(--ease-out), height var(--dur-1) var(--ease-out), margin var(--dur-1) var(--ease-out);
+  transition-delay: calc(var(--i, 0) * 80ms), 0s, 0s, 0s;
+}
+.impact-tl__row--current .impact-tl__bar { background: var(--accent); border-radius: 2px 0 0 2px; }
+.impact-tl__row--current .impact-tl__bar::after {
+  content: ""; position: absolute; right: -4px; top: 50%; width: 9px; height: 9px; margin-top: -4.5px;
+  border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft);
+}
+[data-anim="pending"] .impact-tl__bar { transform: scaleX(0); }
+
+.impact-tl__foot { grid-template-areas: ". now"; padding-top: var(--s-2); }
+.impact-tl__nowlabel {
+  grid-area: now; position: relative; height: 1em; white-space: nowrap; text-align: right;
+  padding-right: calc(100% - var(--now) / var(--span) * 100% + 6px);
+  font: 500 var(--t-micro)/1 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+.impact-tl__nowlabel::before {
+  content: ""; position: absolute; top: calc(-1 * var(--s-2)); bottom: 0; width: 1px;
+  left: calc(var(--now) / var(--span) * 100%); background: var(--_now);
+}
+
+/* Interaction */
+.impact-tl__row:hover, .impact-tl__row:focus-visible { background: var(--paper); }
+.impact-tl__row:hover .impact-tl__org, .impact-tl__row:focus-visible .impact-tl__org { color: var(--accent); }
+.impact-tl__row:hover .impact-tl__bar, .impact-tl__row:focus-visible .impact-tl__bar { background: var(--ink); height: 14px; margin-top: -7px; }
+.impact-tl__row--current:hover .impact-tl__bar, .impact-tl__row--current:focus-visible .impact-tl__bar { background: var(--accent); }
+.impact-tl__row:focus-visible { outline-offset: -2px; border-radius: 0; }
+/* Cross-highlight from capabilities (core.js sets <html data-evidence="…">) */
+html[data-evidence~="saight"] .impact-tl__row[data-id="saight"] .impact-tl__bar,
+html[data-evidence~="appacademy"] .impact-tl__row[data-id="appacademy"] .impact-tl__bar,
+html[data-evidence~="nisum"] .impact-tl__row[data-id="nisum"] .impact-tl__bar,
+html[data-evidence~="boeing"] .impact-tl__row[data-id="boeing"] .impact-tl__bar,
+html[data-evidence~="accenture"] .impact-tl__row[data-id="accenture"] .impact-tl__bar { background: var(--accent); }
+
+@container (max-width: 820px) { .impact-tl { --lw: minmax(0, 12rem); } }
+
+/* Narrow: stacked rows, each with its own full-width mini-track on the shared axis */
+@container (max-width: 560px) {
+  .impact-tl { --pad: 12px; }
+  .impact-tl__head, .impact-tl__row, .impact-tl__foot { grid-template-columns: minmax(0, 1fr); }
+  .impact-tl__head { grid-template-areas: "axis"; }
+  .impact-tl__hcell { display: none; }
+  .impact-tl__row { grid-template-areas: "org" "role" "track"; }
+  .impact-tl__track { margin: var(--s-2) 0 calc(-1 * var(--pad)); height: 24px; }
+  .impact-tl__foot { grid-template-areas: "now"; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .impact-tl__bar { transform: none !important; }
+}

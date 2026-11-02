@@ -1,0 +1,139 @@
+/* ==========================================================================
+   Print — the site prints as a clean, ink-on-white, ATS-friendly résumé.
+   Strategy: hide all screen chrome and exhibits; promote a print-only masthead
+   (inside #contact) to the top; flatten Experience / Capabilities / Education
+   into single-column, text-first blocks.
+   ========================================================================== */
+@media print {
+  @page { size: letter; margin: .42in .55in .4in; }
+
+  :root, :root[data-theme] {
+    color-scheme: light !important;
+    --paper: #fff !important; --paper-2: #fff !important;
+    --ink: #000 !important; --ink-2: #1c1c1c !important; --ink-3: #4a4a4a !important;
+    --rule: #c8c8c8 !important; --rule-strong: #000 !important;
+    --accent: #000 !important; --accent-soft: transparent !important; --hl: transparent !important;
+  }
+  html { font-size: 9.4pt; scroll-padding: 0; }
+  body {
+    background: #fff !important; color: #1c1c1c;
+    font: 400 1rem/1.4 var(--f-sans);
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  *, *::before, *::after {
+    animation: none !important; transition: none !important;
+    box-shadow: none !important; text-shadow: none !important;
+  }
+  .reveal { opacity: 1 !important; transform: none !important; }
+  h1, h2, h3, h4, p, li { orphans: 3; widows: 3; }
+
+  /* ---- Hide screen-only chrome & exhibits ---- */
+  .skip-link, body > header, body > nav, #hero, #impact, .footer, .palette, dialog,
+  .contact__head, .contact__title, .contact__body, .contact__toast,
+  .section-head, .xp__rail, .xp__node, .xp__tags,
+  .cap__legend, .cap__note, .cap__readout, .cap__cols,
+  .cap__head, .cap__cells, .cap__gidx, .cap__gcount, .cap__dagger, .cap__edu-seal,
+  img, video, canvas, [data-print="hide"] { display: none !important; }
+
+  /* ---- Page flow: masthead first ---- */
+  main { display: flex; flex-direction: column; }
+  #contact { order: -1; }
+  .section { padding: 0 !important; margin: 0 !important; }
+  .wrap { width: 100% !important; max-width: none !important; margin: 0 !important; padding: 0 !important; }
+  .grid { display: block !important; }
+
+  /* Section labels (ATS-friendly plain headings) */
+  #experience > .wrap::before, #capabilities > .wrap::before {
+    display: block; margin: .95rem 0 .5rem; padding-bottom: .25rem;
+    border-bottom: .75pt solid #000;
+    font: 600 .82rem/1 var(--f-sans); letter-spacing: .14em; text-transform: uppercase; color: #000;
+    break-after: avoid;
+  }
+  #experience > .wrap::before { content: "Experience"; }
+  #capabilities > .wrap::before { content: "Skills & Education"; }
+
+  /* ---- Masthead (from #contact) ---- */
+  .contact__print { display: block !important; padding-bottom: .55rem; border-bottom: 1.5pt solid #000; }
+  .contact__print-name { font: 400 2.4rem/1 var(--f-display); letter-spacing: -.01em; color: #000; }
+  .contact__print-role { margin-top: .3rem; font: 500 1.02rem/1.3 var(--f-sans); color: #000; }
+  .contact__print-lead { margin-top: .3rem; font: 400 .92rem/1.38 var(--f-sans); color: #1c1c1c; }
+  .contact__print-line { margin-top: .2rem; font: 400 .86rem/1.3 var(--f-mono); color: #333; letter-spacing: .01em; }
+
+  /* ---- Experience ---- */
+  .xp__list { display: block !important; }
+  .xp__role {
+    display: flex !important; flex-direction: column;
+    margin: 0 0 .5rem !important; padding: 0 !important; border: 0 !important; background: none !important;
+    break-inside: avoid; page-break-inside: avoid;
+  }
+  .xp__role::before, .xp__role::after { content: none !important; display: none !important; }
+  .xp__role + .xp__role { padding-top: .45rem !important; border-top: .5pt solid #c8c8c8 !important; }
+  .xp__body { display: contents !important; }
+  .xp__header { order: 1; }
+  .xp__aside, .xp__role > .xp__meta { order: 2; }
+  .xp__aside { display: block !important; position: static !important; margin: 0 0 .2rem !important; padding: 0 !important; }
+  .xp__body > :not(.xp__header) { order: 3; }
+  .xp__meta { display: block !important; margin: 0 !important; }
+  .xp__meta p { display: inline; margin: 0; font: 400 .82rem/1.35 var(--f-mono) !important; color: #444 !important; letter-spacing: 0 !important; text-transform: none !important; }
+  .xp__dates, .xp__present { color: #000 !important; font-weight: 500 !important; }
+  .xp__where::after, .xp__type::after { content: none !important; }
+  .xp__where::before, .xp__type::before { content: "·" !important; margin-right: .3rem; color: #888; }
+  #experience *, #capabilities * { max-width: none !important; }
+  .xp__header { display: block !important; margin: 0 0 .15rem !important; }
+  .xp__company, .xp__title { display: inline !important; margin: 0 !important; }
+  .xp__qual { color: inherit !important; font-weight: 400 !important; }
+  .xp__company { font: 600 1.08rem/1.25 var(--f-sans) !important; color: #000 !important; letter-spacing: 0 !important; }
+  .xp__title { font: 400 1.02rem/1.25 var(--f-sans) !important; color: #1c1c1c !important; }
+  .xp__title::before { content: " — "; color: #666; }
+  .xp__clients { display: block !important; }
+  .xp__client { display: block !important; grid-row: auto !important; margin: .2rem 0 0 !important; padding: 0 !important; border: 0 !important; }
+  .xp__client-label { margin: .25rem 0 .1rem !important; font: italic 400 .92rem/1.3 var(--f-sans) !important; color: #333 !important; letter-spacing: 0 !important; text-transform: none !important; }
+  .xp__client-key { font: inherit !important; text-transform: none !important; letter-spacing: 0 !important; color: inherit !important; }
+  .xp__bullets { display: block !important; margin: .1rem 0 0 !important; padding: 0 0 0 1rem !important; list-style: disc outside !important; }
+  .xp__bullets li {
+    display: list-item !important; margin: 0 0 .06rem !important; padding: 0 !important;
+    font: 400 .96rem/1.34 var(--f-sans) !important; color: #1c1c1c !important; max-width: none !important;
+  }
+  .xp__bullets li::before { content: none !important; display: none !important; }
+  .xp__num { font: inherit !important; color: inherit !important; background: none !important; padding: 0 !important; }
+
+  /* ---- Capabilities: one line per group ---- */
+  .cap__matrix { display: block !important; border: 0 !important; }
+  .cap__group {
+    display: grid !important; grid-template-columns: 12.75rem minmax(0, 1fr); text-align: left !important;
+    margin: 0 0 .2rem !important; padding: 0 !important; border: 0 !important; break-inside: avoid;
+  }
+  .cap__gname { display: block !important; grid-column: 1 !important; grid-row: 1 !important; margin: 0 !important; padding: 0 !important; border: 0 !important; font: 600 .96rem/1.38 var(--f-sans) !important; color: #000 !important; letter-spacing: 0 !important; text-transform: none !important; }
+  .cap__gtitle { font: inherit !important; }
+  .cap__rows { text-wrap: balance; grid-column: 2 !important; grid-row: 1 !important; text-align: left !important; display: block !important; margin: 0 !important; padding: 0 !important; border: 0 !important; }
+  .cap__row { display: inline !important; padding: 0 !important; margin: 0 !important; border: 0 !important; min-height: 0 !important; background: none !important; }
+  .cap__row { white-space: nowrap; }
+  .cap__row:not(:last-child)::after { content: "\00a0·"; color: #666; }
+  .cap__also { display: inline !important; margin: 0 !important; padding: 0 !important; border: 0 !important; }
+  .cap__also-label { display: none !important; }
+  .cap__also-list { font: 400 .96rem/1.34 var(--f-sans) !important; color: #1c1c1c !important; letter-spacing: 0 !important; text-transform: none !important; }
+  .cap__row::before { content: none !important; }
+  .cap__skill {
+    display: inline !important; padding: 0 !important; min-height: 0 !important; border: 0 !important; background: none !important;
+    font: 400 .96rem/1.38 var(--f-sans) !important; color: #1c1c1c !important; letter-spacing: 0 !important; text-transform: none !important;
+  }
+
+  /* ---- Education ---- */
+  .cap__edu {
+    display: flex !important; align-items: baseline; column-gap: 0;
+    margin: .35rem 0 0 !important; padding: .35rem 0 0 !important; border: 0 !important; border-top: .5pt solid #c8c8c8 !important;
+    break-inside: avoid;
+  }
+  .cap__edu-label { flex: 0 0 12.75rem; font: 600 .96rem/1.38 var(--f-sans) !important; color: #000 !important; letter-spacing: 0 !important; text-transform: none !important; margin: 0 !important; }
+  .cap__edu-body { flex: 1 1 auto; display: flex !important; justify-content: space-between; align-items: baseline; gap: 1rem; margin: 0 !important; padding: 0 !important; border: 0 !important; }
+  .cap__edu-text { display: block !important; flex: 1 1 0; min-width: 0; }
+  .cap__edu-body > * { grid-column: auto !important; }
+  .cap__edu-school { font: 600 .96rem/1.38 var(--f-sans) !important; color: #000 !important; letter-spacing: 0 !important; display: inline; }
+  .cap__edu-degree { display: inline; font: 400 .96rem/1.38 var(--f-sans) !important; color: #1c1c1c !important; }
+  .cap__edu-degree::before { content: " — "; color: #666; }
+  .cap__edu-years { font: 500 .82rem/1.38 var(--f-mono) !important; color: #000 !important; white-space: nowrap; margin: 0 !important; }
+
+  /* ---- Links: show destinations where useful ---- */
+  a { color: inherit !important; text-decoration: none !important; }
+  main a[href^="http"]:not(.contact__row)::after { content: " (" attr(href) ")"; font: 400 .8rem var(--f-mono); color: #4a4a4a; }
+}

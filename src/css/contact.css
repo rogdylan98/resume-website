@@ -1,0 +1,160 @@
+/* ==========================================================================
+   04 — Contact + footer colophon
+   ========================================================================== */
+.contact { padding-bottom: var(--s-8); }
+
+/* Head: index left, live Austin clock right */
+.contact__head { margin-bottom: var(--s-7); }
+.contact__clock {
+  grid-column: 4 / -1; justify-self: end;
+  display: inline-flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+  font: 500 var(--t-micro)/1.2 var(--f-mono); letter-spacing: .14em; text-transform: uppercase;
+  color: var(--ink-3);
+}
+.contact__clock-sep { color: var(--rule-strong); }
+.contact__clock-time { color: var(--ink); font-variant-numeric: tabular-nums; letter-spacing: .08em; }
+.contact__clock-time time::before {
+  content: ""; display: inline-block; width: 6px; height: 6px; margin-right: 8px; border-radius: 50%;
+  background: var(--accent); vertical-align: .1em;
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+@media (max-width: 720px) {
+  .contact__clock { grid-column: 1 / -1; justify-self: start; }
+}
+
+/* Monumental CTA */
+.contact__title {
+  font: 400 clamp(3.9rem, 1.2rem + 9.2vw, 10.5rem)/.9 var(--f-display);
+  letter-spacing: -.025em; color: var(--ink);
+  max-width: 12ch; margin-bottom: var(--s-8);
+  text-wrap: balance;
+}
+.contact__title em { font-style: italic; letter-spacing: -.02em; padding-right: .04em; }
+.contact__stop { color: var(--accent); }
+
+/* Body: email (primary) + link rows */
+.contact__body {
+  display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); row-gap: var(--s-7);
+  align-items: start;
+}
+.contact__primary { grid-column: 1 / span 7; min-width: 0; }
+.contact__elsewhere { grid-column: 9 / -1; min-width: 0; }
+.contact__links { border-top: 1px solid var(--rule-strong); }
+@media (max-width: 960px) {
+  .contact__primary, .contact__elsewhere { grid-column: 1 / -1; }
+}
+
+.contact__label {
+  font: 500 var(--t-micro)/1.2 var(--f-mono); letter-spacing: .14em; text-transform: uppercase;
+  color: var(--ink-3); margin-bottom: var(--s-3);
+}
+
+/* The email: one large interactive object */
+.contact__email {
+  position: relative; display: flex; align-items: center; justify-content: space-between; gap: var(--s-5);
+  width: 100%; min-height: 64px; padding: var(--s-3) 0 var(--s-4);
+  text-align: left; color: var(--ink); border-bottom: 1px solid var(--rule-strong);
+  border-radius: 0;
+}
+.contact__email::after { /* accent hairline that draws in on hover/focus */
+  content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 1px;
+  background: var(--accent); transform: scaleX(0); transform-origin: left;
+  transition: transform var(--dur-3) var(--ease-out);
+}
+.contact__email:hover::after, .contact__email:focus-visible::after, .contact__email.is-copied::after { transform: scaleX(1); }
+.contact__email:focus-visible { outline-offset: 6px; }
+.contact__email-addr {
+  min-width: 0; overflow-wrap: anywhere;
+  font: 400 clamp(1.9rem, 1rem + 3.4vw, 4rem)/1.05 var(--f-display); letter-spacing: -.015em;
+  transition: color var(--dur-1) var(--ease-out);
+}
+.contact__email:hover .contact__email-addr { color: var(--accent); }
+
+.contact__chip {
+  flex: none; display: inline-flex; align-items: center; gap: 8px; height: 36px; padding: 0 14px 0 12px;
+  border: 1px solid var(--rule-strong); border-radius: 999px;
+  font: 500 var(--t-micro)/1 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2);
+  transition: background-color var(--dur-1) var(--ease-out), color var(--dur-1) var(--ease-out), border-color var(--dur-1) var(--ease-out);
+}
+.contact__chip-icon { width: 14px; height: 14px; }
+.contact__chip-icon--done { display: none; }
+.contact__email:hover .contact__chip, .contact__email:focus-visible .contact__chip { border-color: var(--ink); color: var(--ink); }
+.contact__email.is-copied .contact__chip { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.contact__email.is-copied .contact__chip-icon--copy { display: none; }
+.contact__email.is-copied .contact__chip-icon--done { display: block; }
+.contact__email:active .contact__chip { transform: translateY(1px); }
+
+.contact__mailto {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin-top: var(--s-2);
+  font: 400 var(--t-small)/1.2 var(--f-sans); color: var(--ink-3);
+  transition: color var(--dur-1) var(--ease-out);
+}
+.contact__mailto svg { width: 14px; height: 14px; transition: transform var(--dur-2) var(--ease-out); }
+.contact__mailto:hover { color: var(--ink); }
+.contact__mailto:hover svg { transform: translateX(3px); }
+
+/* Link rows */
+.contact__row {
+  display: grid; grid-template-columns: 6.5rem 1fr 16px; align-items: center; gap: var(--s-4);
+  min-height: 56px; padding: 0;
+  border-bottom: 1px solid var(--rule);
+  font: 400 var(--t-small)/1.2 var(--f-mono); color: var(--ink);
+  transition: background-color var(--dur-1) var(--ease-out), color var(--dur-1) var(--ease-out), padding var(--dur-2) var(--ease-out);
+}
+.contact__row-key { font-size: var(--t-micro); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); }
+.contact__row-val { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.contact__row-arrow { width: 16px; height: 16px; color: var(--ink-3); transition: transform var(--dur-2) var(--ease-out), color var(--dur-1) var(--ease-out); }
+.contact__row:hover, .contact__row:focus-visible { color: var(--accent); }
+.contact__row:hover .contact__row-arrow, .contact__row:focus-visible .contact__row-arrow { color: var(--accent); transform: translate(2px, -2px); }
+.contact__row:hover .contact__row-arrow--down, .contact__row:focus-visible .contact__row-arrow--down { transform: translateY(2px); }
+.contact__row:focus-visible { outline-offset: -2px; }
+
+/* Print-only masthead */
+.contact__print { display: none; }
+
+/* Toast (live region) */
+.contact__toast {
+  position: fixed; left: 50%; bottom: max(24px, env(safe-area-inset-bottom)); z-index: 900;
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 12px 16px; border-radius: 999px;
+  background: var(--ink); color: var(--paper); box-shadow: var(--shadow-1);
+  font: 500 var(--t-micro)/1 var(--f-mono); letter-spacing: .08em; white-space: nowrap;
+  opacity: 0; pointer-events: none; transform: translate(-50%, 12px);
+  transition: opacity var(--dur-2) var(--ease-out), transform var(--dur-2) var(--ease-out);
+}
+.contact__toast:empty { visibility: hidden; }
+.contact__toast.is-visible { opacity: 1; transform: translate(-50%, 0); }
+.contact__toast::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+
+/* ---- Footer colophon ---- */
+.footer { border-top: 1px solid var(--rule); padding-block: var(--s-6) max(var(--s-6), env(safe-area-inset-bottom)); }
+.footer__inner {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s-3) var(--s-6);
+}
+.footer__item {
+  font: 400 var(--t-micro)/1.4 var(--f-mono); letter-spacing: .06em; color: var(--ink-3);
+}
+.footer__item--copy { color: var(--ink); }
+.footer__palette, .footer__top {
+  padding: 0; display: inline-flex; align-items: center; gap: 6px; min-height: 44px;
+  transition: color var(--dur-1) var(--ease-out);
+}
+.footer__palette:hover, .footer__top:hover { color: var(--accent); }
+.footer__kbd {
+  display: inline-grid; place-items: center; min-width: 34px; height: 24px; padding: 0 7px;
+  border-radius: 999px; background: var(--paper-2);
+  font: 500 var(--t-micro)/1 var(--f-mono); letter-spacing: .02em; color: var(--ink-2); white-space: nowrap;
+}
+.footer__palette:hover .footer__kbd { background: var(--rule); color: inherit; }
+.footer__top svg { width: 14px; height: 14px; transition: transform var(--dur-2) var(--ease-out); }
+.footer__top:hover svg { transform: translateY(-2px); }
+@media (hover: none) { .footer__palette { display: none; } }
+@media (max-width: 720px) {
+  .footer__inner { display: grid; grid-template-columns: 1fr auto; gap: var(--s-2) var(--s-4); }
+  .footer__item { grid-column: 1; }
+  .footer__item--copy { grid-column: 1; }
+  .footer__top { grid-column: 2; grid-row: 1; justify-self: end; align-self: center; margin-block: -12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .contact__email::after { transition: none; }
+}

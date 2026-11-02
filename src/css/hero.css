@@ -52,7 +52,7 @@
   border-radius: 2px;
 }
 .hero__img {
-  width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%;
+  width: 100%; height: 100%; object-fit: cover; object-position: 50% 18%;
   filter: url(#hero-duo-light);
   transform: scale(1.16); transform-origin: 50% 24%;
 }
@@ -242,17 +242,17 @@
     grid-template-areas:
       "name name name name name name"
       "copy copy copy copy copy copy"
-      "port port port port port port"
-      "asid asid asid asid asid asid";
+      "asid asid asid asid asid asid"
+      "port port port port port port";
     grid-template-rows: auto;
     padding-top: var(--s-6);
   }
   .hero__line--2 { padding-left: 0; text-align: right; }
   .hero__copy { grid-column: 1 / -1; margin-top: var(--s-5); padding-top: 0; border-top: 0; }
   .hero__portrait { margin-top: var(--s-7); }
-  .hero__frame { flex: none; min-height: 0; aspect-ratio: 4 / 3; }
-  .hero__img { object-position: 50% 26%; transform: scale(1.1); transform-origin: 50% 28%; }
-  .hero__aside { margin-top: var(--s-6); }
+  .hero__frame { flex: none; min-height: 0; aspect-ratio: 1 / 1; }
+  .hero__img { object-position: 50% 22%; transform: scale(1.04); transform-origin: 50% 25%; }
+  .hero__aside { margin-top: var(--s-5); }
   .hero__ctas .btn { flex: 1 1 auto; justify-content: center; }
   .hero__ex, .hero__focus { grid-template-columns: 1fr; }
   .hero__ex-rail, .hero__chart, .hero__focus-label, .hero__focus-list { grid-column: 1; }

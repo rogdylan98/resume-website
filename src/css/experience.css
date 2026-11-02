@@ -147,7 +147,7 @@
 .xp__client-key { color: var(--accent); }
 
 /* Bullets */
-.xp__bullets { display: grid; gap: var(--s-3); max-width: 64ch; align-content: start; }
+.xp__bullets { display: grid; gap: var(--s-3); max-width: 72ch; align-content: start; }
 .xp__role--lead .xp__bullets { gap: var(--s-4); }
 .xp__bullets li {
   position: relative; padding-left: 22px;

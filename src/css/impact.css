@@ -63,7 +63,7 @@
   grid-template-rows: none; grid-template-columns: subgrid;
   align-items: end; margin-bottom: var(--s-4);
 }
-.impact__metric:only-child .impact__desc { grid-column: 2 / -1; padding-left: var(--s-5); max-width: 44ch; padding-bottom: 2px; }
+.impact__metric:only-child .impact__desc { grid-column: 2 / span 1; padding-left: var(--s-5); max-width: 36ch; padding-bottom: 2px; }
 .impact__value { display: flex; align-items: baseline; }
 .impact__num {
   display: inline-grid;
@@ -76,7 +76,7 @@
 /* Reserve the final value's width so the count-up never shifts layout */
 .impact__num > span, .impact__num::after { grid-area: 1 / 1; text-align: left; }
 .impact__num[data-final]::after { content: attr(data-final); visibility: hidden; }
-.impact__metric--lead .impact__num { color: var(--accent); }
+.impact__metric--lead .impact__num { color: var(--ink); }
 .impact__desc { font: 400 var(--t-small)/1.45 var(--f-sans); color: var(--ink-2); text-wrap: pretty; max-width: 30ch; }
 
 /* Narrow: each tile becomes a compact row — figure left, descriptor right */

@@ -116,8 +116,8 @@
 .xp__body { grid-column: 4 / -1; min-width: 0; align-self: baseline; container-type: inline-size; container-name: xp-body; }
 .xp__header { margin-bottom: var(--s-5); }
 .xp__company {
-  font: 400 clamp(1.9rem, 1.5rem + 1.2vw, 2.5rem)/1 var(--f-display);
-  letter-spacing: -.012em; color: var(--ink);
+  font: 400 clamp(1.75rem, 1.5rem + .9vw, 2.25rem)/1.1 var(--f-display);
+  letter-spacing: -.008em; color: var(--ink);
 }
 .xp__title {
   margin-top: var(--s-2);
@@ -126,7 +126,7 @@
 .xp__qual { font-weight: 400; color: var(--ink-3); }
 
 /* Lead role: one size step up, more air */
-.xp__role--lead .xp__company { font-size: clamp(2.4rem, 1.7rem + 2vw, 3.25rem); letter-spacing: -.018em; }
+.xp__role--lead .xp__company { font-size: clamp(2.1rem, 1.7rem + 1.4vw, 2.75rem); letter-spacing: -.01em; }
 .xp__role--lead .xp__header { margin-bottom: var(--s-6); }
 .xp__role--compact { --xp-pad: var(--s-6); }
 .xp__role--compact .xp__header { margin-bottom: var(--s-4); }

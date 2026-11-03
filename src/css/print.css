@@ -46,7 +46,7 @@
   #experience > .wrap::before, #capabilities > .wrap::before {
     display: block; margin: .95rem 0 .5rem; padding-bottom: .25rem;
     border-bottom: .75pt solid #000;
-    font: 600 .82rem/1 var(--f-sans); letter-spacing: .14em; text-transform: uppercase; color: #000;
+    font: 600 .82rem/1 var(--f-sans); letter-spacing: .08em; text-transform: uppercase; color: #000;
     break-after: avoid;
   }
   #experience > .wrap::before { content: "Experience"; }

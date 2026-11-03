@@ -13,7 +13,7 @@ CONFIDENTIALITY (public page, conservative): never name clients (no TIAA, no Fed
 - Location: Austin, Texas
 - Email: rdylan.silva@gmail.com · Phone: 713-816-9683 · LinkedIn: https://www.linkedin.com/in/rdylan-silva
 - Resume PDF: assets/Dylan_Silva_Resume.pdf
-- Photo: assets/profile.jpg (968x922)
+- Photo: assets/profile.jpg (968x922) — not shown on the page (removed Nov 2026 at user request); used only as social preview image
 
 ## Hero / intro (from LinkedIn About)
 Lead: I turn complex enterprise automation into shipped, funded releases, and I build AI-driven workflow design into how I deliver.

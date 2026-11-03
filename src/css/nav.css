@@ -148,7 +148,7 @@
   height: var(--nav-h); display: flex; align-items: center; justify-content: space-between;
   border-bottom: 1px solid var(--rule);
 }
-.nav-sheet__eyebrow { font: 500 var(--t-micro)/1 var(--f-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); }
+.nav-sheet__eyebrow { font: 500 var(--t-micro)/1 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
 .nav-sheet__close { width: 44px; height: 44px; margin-right: -10px; }
 .nav-sheet__list { padding-block: var(--s-5); }
 .nav-sheet__list > li { border-bottom: 1px solid var(--rule); }

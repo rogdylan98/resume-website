@@ -102,7 +102,7 @@ html:has(.palette[open]) { overflow: hidden; }
 
 /* Empty */
 .palette__empty { padding: 40px 24px 44px; text-align: center; }
-.palette__empty-title { font: 400 1.5rem/1.2 var(--f-display); color: var(--ink); margin-bottom: 6px; }
+.palette__empty-title { font: 500 1.5rem/1.2 var(--f-display); color: var(--ink); margin-bottom: 6px; }
 .palette__empty-hint { font: 400 var(--t-micro)/1.4 var(--f-mono); color: var(--ink-3); }
 
 /* Footer */

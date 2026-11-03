@@ -116,7 +116,7 @@
 .xp__body { grid-column: 4 / -1; min-width: 0; align-self: baseline; container-type: inline-size; container-name: xp-body; }
 .xp__header { margin-bottom: var(--s-5); }
 .xp__company {
-  font: 400 clamp(1.75rem, 1.5rem + .9vw, 2.25rem)/1.1 var(--f-display);
+  font: 500 clamp(1.75rem, 1.5rem + .9vw, 2.25rem)/1.1 var(--f-display);
   letter-spacing: -.008em; color: var(--ink);
 }
 .xp__title {

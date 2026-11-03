@@ -90,7 +90,7 @@
 .cap__gcount::after { content: " skills"; }
 .cap__gtitle {
   grid-column: 1 / -1; grid-row: 2;
-  font: 400 var(--t-h3)/1.1 var(--f-display); letter-spacing: -.005em; color: var(--ink);
+  font: 500 var(--t-h3)/1.1 var(--f-display); letter-spacing: -.005em; color: var(--ink);
 }
 
 .cap__rows {
@@ -225,7 +225,7 @@
     mix-blend-mode: screen; opacity: .85;
   }
 }
-.cap__edu-school { font: 400 var(--t-h3)/1.15 var(--f-display); color: var(--ink); letter-spacing: -.005em; }
+.cap__edu-school { font: 500 var(--t-h3)/1.15 var(--f-display); color: var(--ink); letter-spacing: -.005em; }
 .cap__edu-degree { margin-top: 4px; font: 400 var(--t-small)/1.5 var(--f-sans); color: var(--ink-2); }
 .cap__edu-sep { color: var(--ink-3); white-space: pre; }
 .cap__edu-years { font: 400 var(--t-small)/1 var(--f-mono); color: var(--ink-3); letter-spacing: .02em; white-space: nowrap; }

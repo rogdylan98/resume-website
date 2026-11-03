@@ -1,7 +1,7 @@
 /* ==========================================================================
    04 — Contact: copy-to-clipboard + toast, live Austin clock, footer controls
    Shared event contract (document):
-     'site:toast'  detail { message }  → shows the toast (palette.js uses it too)
+     'site:toast'  detail { message }  → shows the toast
    ========================================================================== */
 (() => {
   const EMAIL = 'rdylan.silva@gmail.com';
@@ -94,12 +94,8 @@
   }
 
   function initFooter(Site) {
-    const isMac = /Mac|iPhone|iPad|iPod/i.test(navigator.platform || navigator.userAgent);
-    document.querySelectorAll('[data-footer-kbd]').forEach((k) => { k.textContent = isMac ? '⌘K' : 'Ctrl K'; });
     const year = document.querySelector('[data-footer-year]');
     if (year) year.textContent = String(new Date().getFullYear());
-    const pal = document.querySelector('[data-footer-palette]');
-    if (pal) pal.addEventListener('click', () => Site.openPalette());
     const top = document.querySelector('[data-footer-top]');
     if (top) top.addEventListener('click', (e) => {
       e.preventDefault();

@@ -44,7 +44,7 @@ p, li { text-wrap: pretty; }
 .display em, .display i { font-style: normal; }
 .eyebrow {
   font: 500 var(--t-micro)/1.2 var(--f-mono);
-  letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3);
+  letter-spacing: 0; text-transform: none; color: var(--ink-3);
 }
 .num { font-variant-numeric: tabular-nums lining-nums; }
 .mono { font-family: var(--f-mono); }
@@ -67,7 +67,7 @@ p, li { text-wrap: pretty; }
 
 /* Exhibit */
 .exhibit { display: flex; flex-direction: column; gap: var(--s-4); }
-.exhibit__label { font: 500 var(--t-micro)/1 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+.exhibit__label { font: 500 var(--t-micro)/1 var(--f-mono); letter-spacing: 0; text-transform: none; color: var(--accent); }
 .exhibit__title { font: 500 1.0625rem/1.35 var(--f-sans); color: var(--ink); text-wrap: balance; }
 .exhibit__note { font: 400 .75rem/1.5 var(--f-mono); color: var(--ink-3); border-top: 1px solid var(--rule); padding-top: var(--s-3); }
 
@@ -75,7 +75,7 @@ p, li { text-wrap: pretty; }
 .btn {
   --_bg: transparent; --_fg: var(--ink); --_bd: var(--rule-strong);
   display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 22px;
-  border: 1px solid var(--_bd); border-radius: 999px; background: var(--_bg); color: var(--_fg);
+  border: 1px solid var(--_bd); border-radius: 6px; background: var(--_bg); color: var(--_fg);
   font: 500 var(--t-small)/1 var(--f-sans); letter-spacing: -.005em;
   transition: background-color var(--dur-1) var(--ease-out), color var(--dur-1) var(--ease-out),
               border-color var(--dur-1) var(--ease-out), transform var(--dur-1) var(--ease-out);

@@ -108,7 +108,7 @@
 }
 .xp__type {
   margin-top: var(--s-1);
-  font: 400 var(--t-micro)/1.5 var(--f-mono); letter-spacing: .08em; text-transform: uppercase;
+  font: 400 var(--t-micro)/1.5 var(--f-mono); letter-spacing: 0; text-transform: none;
   color: var(--ink-3);
 }
 
@@ -141,7 +141,7 @@
 }
 .xp__client { border-top: 1px solid var(--rule-strong); padding-top: var(--s-3); }
 .xp__client-label {
-  font: 500 var(--t-micro)/1.5 var(--f-mono); letter-spacing: .1em; text-transform: uppercase;
+  font: 500 var(--t-micro)/1.5 var(--f-mono); letter-spacing: .1em; text-transform: none;
   color: var(--ink-3); margin-bottom: var(--s-4); text-wrap: balance;
 }
 .xp__client-key { color: var(--accent); }

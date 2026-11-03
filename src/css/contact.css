@@ -8,16 +8,11 @@
 .contact__clock {
   grid-column: 4 / -1; justify-self: end;
   display: inline-flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
-  font: 500 var(--t-micro)/1.2 var(--f-mono); letter-spacing: .08em; text-transform: uppercase;
+  font: 500 var(--t-micro)/1.2 var(--f-mono); letter-spacing: 0; text-transform: none;
   color: var(--ink-3);
 }
 .contact__clock-sep { color: var(--rule-strong); }
-.contact__clock-time { color: var(--ink); font-variant-numeric: tabular-nums; letter-spacing: .08em; }
-.contact__clock-time time::before {
-  content: ""; display: inline-block; width: 6px; height: 6px; margin-right: 8px; border-radius: 50%;
-  background: var(--accent); vertical-align: .1em;
-  box-shadow: 0 0 0 3px var(--accent-soft);
-}
+.contact__clock-time { color: var(--ink); font-variant-numeric: tabular-nums; letter-spacing: 0; }
 @media (max-width: 720px) {
   .contact__clock { grid-column: 1 / -1; justify-self: start; }
 }
@@ -45,7 +40,7 @@
 }
 
 .contact__label {
-  font: 500 var(--t-micro)/1.2 var(--f-mono); letter-spacing: .08em; text-transform: uppercase;
+  font: 500 var(--t-micro)/1.2 var(--f-mono); letter-spacing: 0; text-transform: none;
   color: var(--ink-3); margin-bottom: var(--s-3);
 }
 
@@ -72,8 +67,8 @@
 
 .contact__chip {
   flex: none; display: inline-flex; align-items: center; gap: 8px; height: 36px; padding: 0 14px 0 12px;
-  border: 1px solid var(--rule-strong); border-radius: 999px;
-  font: 500 var(--t-micro)/1 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2);
+  border: 1px solid var(--rule-strong); border-radius: 6px;
+  font: 500 var(--t-micro)/1 var(--f-mono); letter-spacing: .1em; text-transform: none; color: var(--ink-2);
   transition: background-color var(--dur-1) var(--ease-out), color var(--dur-1) var(--ease-out), border-color var(--dur-1) var(--ease-out);
 }
 .contact__chip-icon { width: 14px; height: 14px; }
@@ -101,7 +96,7 @@
   font: 400 var(--t-small)/1.2 var(--f-mono); color: var(--ink);
   transition: background-color var(--dur-1) var(--ease-out), color var(--dur-1) var(--ease-out), padding var(--dur-2) var(--ease-out);
 }
-.contact__row-key { font-size: var(--t-micro); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+.contact__row-key { font-size: var(--t-micro); letter-spacing: 0; text-transform: none; color: var(--ink-3); }
 .contact__row-val { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .contact__row-arrow { width: 16px; height: 16px; color: var(--ink-3); transition: transform var(--dur-2) var(--ease-out), color var(--dur-1) var(--ease-out); }
 .contact__row:hover, .contact__row:focus-visible { color: var(--accent); }
@@ -116,9 +111,9 @@
 .contact__toast {
   position: fixed; left: 50%; bottom: max(24px, env(safe-area-inset-bottom)); z-index: 900;
   display: inline-flex; align-items: center; gap: 10px;
-  padding: 12px 16px; border-radius: 999px;
+  padding: 12px 16px; border-radius: 6px;
   background: var(--ink); color: var(--paper); box-shadow: var(--shadow-1);
-  font: 500 var(--t-micro)/1 var(--f-mono); letter-spacing: .08em; white-space: nowrap;
+  font: 500 var(--t-micro)/1 var(--f-mono); letter-spacing: 0; white-space: nowrap;
   opacity: 0; pointer-events: none; transform: translate(-50%, 12px);
   transition: opacity var(--dur-2) var(--ease-out), transform var(--dur-2) var(--ease-out);
 }
@@ -132,7 +127,7 @@
   display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s-3) var(--s-6);
 }
 .footer__item {
-  font: 400 var(--t-micro)/1.4 var(--f-mono); letter-spacing: .06em; color: var(--ink-3);
+  font: 400 var(--t-micro)/1.4 var(--f-mono); letter-spacing: 0; color: var(--ink-3);
 }
 .footer__item--copy { color: var(--ink); }
 .footer__palette, .footer__top {
@@ -142,7 +137,7 @@
 .footer__palette:hover, .footer__top:hover { color: var(--accent); }
 .footer__kbd {
   display: inline-grid; place-items: center; min-width: 34px; height: 24px; padding: 0 7px;
-  border-radius: 999px; background: var(--paper-2);
+  border-radius: 6px; background: var(--paper-2);
   font: 500 var(--t-micro)/1 var(--f-mono); letter-spacing: .02em; color: var(--ink-2); white-space: nowrap;
 }
 .footer__palette:hover .footer__kbd { background: var(--rule); color: inherit; }

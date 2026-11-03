@@ -1,5 +1,5 @@
 /* ==========================================================================
-   00 — Nav: scrolled state, progress, active section, theme, palette, sheet
+   00 — Nav: scrolled state, progress, active section, theme, sheet
    ========================================================================== */
 (() => {
   const Site = window.Site;
@@ -14,17 +14,6 @@
     const indicator = nav.querySelector('.nav__indicator');
     const deskLinks = [...nav.querySelectorAll('.nav__link')];
     const allLinks = [...document.querySelectorAll('[data-nav-link]')];
-
-    /* ---- Platform-aware shortcut label ---- */
-    const platform = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || navigator.userAgent;
-    const isMac = /mac|iphone|ipad|ipod/i.test(platform);
-    document.querySelectorAll('[data-nav-kbd]').forEach((k) => { k.textContent = isMac ? '⌘K' : 'Ctrl K'; });
-
-    /* ---- Command palette ---- */
-    document.querySelectorAll('[data-nav-palette]').forEach((b) => b.addEventListener('click', () => {
-      if (sheet && !sheet.hidden) closeSheet({ restoreFocus: false });
-      Site.openPalette();
-    }));
 
     /* ---- Theme toggle ---- */
     const themeBtns = [...document.querySelectorAll('[data-nav-theme]')];

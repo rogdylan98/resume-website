@@ -9,8 +9,8 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC = ROOT / "src"
 
 PARTIALS = ["nav", "hero", "impact", "experience", "about", "capabilities", "contact"]
-CSS = ["tokens", "base", "nav", "hero", "impact", "experience", "about", "capabilities", "contact", "palette", "print"]
-JS = ["core", "nav", "hero", "impact", "experience", "capabilities", "contact", "palette"]
+CSS = ["tokens", "base", "nav", "hero", "impact", "experience", "about", "capabilities", "contact", "print"]
+JS = ["core", "nav", "hero", "impact", "experience", "capabilities", "contact"]
 
 
 def read(p):
@@ -22,7 +22,6 @@ def main():
     body = "\n".join(read(SRC / f"partials/{n}.html") for n in PARTIALS if n != "nav" and n != "contact")
     nav = read(SRC / "partials/nav.html")
     contact = read(SRC / "partials/contact.html")
-    palette = read(SRC / "partials/palette.html")
     footer = read(SRC / "partials/footer.html")
 
     scripts = "\n".join(f'<script src="js/{n}.js" defer></script>' for n in JS if (SRC / f"js/{n}.js").exists())
@@ -39,7 +38,6 @@ def main():
 {contact}
 </main>
 {footer}
-{palette}
 {scripts}
 </body>
 </html>

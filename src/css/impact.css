@@ -35,7 +35,7 @@
 .impact__ghead {
   display: flex; flex-wrap: wrap; align-items: baseline; column-gap: var(--s-3); row-gap: 2px;
   padding: var(--s-5) 0 0;
-  font: 500 var(--t-micro)/1.35 var(--f-mono); letter-spacing: .1em; text-transform: uppercase;
+  font: 500 var(--t-micro)/1.35 var(--f-mono); letter-spacing: .1em; text-transform: none;
 }
 .impact__gfirm { color: var(--ink); }
 .impact__gclient { color: var(--ink-3); }
@@ -110,7 +110,7 @@
   grid-template-areas: "role axis";
   padding-bottom: var(--s-2);
   border-bottom: 1px solid var(--rule-strong);
-  font: 500 var(--t-micro)/1 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3);
+  font: 500 var(--t-micro)/1 var(--f-mono); letter-spacing: .1em; text-transform: none; color: var(--ink-3);
 }
 .impact-tl__hcell { grid-area: role; }
 .impact-tl__axis { grid-area: axis; position: relative; height: 1em; }
@@ -130,7 +130,7 @@
 }
 .impact-tl__org { grid-area: org; font: 500 var(--t-small)/1.3 var(--f-sans); color: var(--ink); display: flex; align-items: center; gap: var(--s-2); transition: color var(--dur-1) var(--ease-out); }
 .impact-tl__cur {
-  font: 500 var(--t-micro)/1 var(--f-mono); letter-spacing: .1em; text-transform: uppercase;
+  font: 500 var(--t-micro)/1 var(--f-mono); letter-spacing: .1em; text-transform: none;
   color: var(--accent); padding: 2px 5px; border: 1px solid currentColor; border-radius: 2px;
 }
 .impact-tl__role { grid-area: role; font: 400 .8125rem/1.35 var(--f-sans); color: var(--ink-3); }
@@ -163,7 +163,7 @@
 .impact-tl__nowlabel {
   grid-area: now; position: relative; height: 1em; white-space: nowrap; text-align: right;
   padding-right: calc(100% - var(--now) / var(--span) * 100% + 6px);
-  font: 500 var(--t-micro)/1 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--accent);
+  font: 500 var(--t-micro)/1 var(--f-mono); letter-spacing: .1em; text-transform: none; color: var(--accent);
   font-variant-numeric: tabular-nums;
 }
 .impact-tl__nowlabel::before {

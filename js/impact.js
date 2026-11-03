@@ -81,6 +81,7 @@
   }
 
   function initMetrics(list, Site) {
+    return; /* static numbers, no count-up */
     const nums = Array.from(list.querySelectorAll('.impact__num[data-count]'));
     const parts = nums.map((el) => ({
       el,
